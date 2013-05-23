@@ -24,38 +24,33 @@
 				   alt="switch to English language" /></a>
       <a href="/?de"><img src="static/images/de.png" title="Deutsch"
 				   alt="auf deutsche Sprache umschalten" /></a>
-      <a href="/?es"><img src="static/images/es.png" title="Espanol"
-				   alt="Espanol" /></a>
-      <a href="/?fr"><img src="static/images/fr.png" title="Francais"
-				   alt="Francais" /></a>
-      <a href="/?da"><img src="static/images/dk.png" title="Dansk"
-				   alt="Dansk" /></a>
     </div>
     <p>
-      <strong i18n:translate="intent-form-note">
-	After submitting the form below, you will be presented with a PDF download (~90 KB) with your data filled in. Please print out at least the second and third page. Take your time and read them carefully - and don't forget to sign! Send both (!) pages scanned or printed to C3S. Please find the addresses on the first page. We will receive your data via encrypted email -- and then wait for your signature to make it valid!
+      <strong i18n:translate="intent-form-v2-note">
+        After submitting the form below, you will be presented with a PDF download (~90 KB) with your data filled in. Please print it out entirely. Take your time and read them carefully - and don't forget to sign! Send all (!) pages scanned or printed to C3S. Please find the addresses on the first page. We will receive your data via encrypted email -- and then wait for your signature to make it valid!
       </strong>
     </p>
-    <p i18n:translate="intent-form-intro-1">
-      When we submit our application for approval as a collecting society at the German Patent and Trademark Office, we must be able to prove the anticipated level of support and acceptance for the time when we commence our business operation. Facebook followers are not sufficient – we need some additional assistance.
+    <h3 i18n:translate="intent-form-v2-headline-1" class="deform">Start the fire!</h3>
+    <ul>
+      <li i18n:translate="intent-form-v2-intro-1-step1">Step 1 -- Want to be a part of the action? Make your stand and give us your GO by signing!</li>
+      <li i18n:translate="intent-form-v2-intro-1-step2">Step 2 -- 1.000 signatures in -- then C3S is being founded.</li>
+      <li i18n:translate="intent-form-v2-intro-1-step3">Step 3 -- You decide to become a founding member and make history.</li>
+    </ul>
+    <h3 i18n:translate="intent-form-v2-headline-2" class="deform">What's going on.</h3>
+    <p i18n:translate="intent-form-v2-intro-1">
+      By signing the form you declare your intent to join C3S at its founding. In turn, you are going to receive a note telling you where &amp; when the crowdfunding for launching C3S will take place - even before the public. Then you can purchase shares in C3S, plus exclusive rewards &amp; goodies in extremely limited numbers. To be honest, we are already heavily adrenalised -- 'cause something big is coming! Something, that is only available with us. Be one of the first to pick your own reward!
     </p>
-    <p i18n:translate="intent-form-intro-2">
-      If you are willing to become a member of C3S after its foundation and wish to entrust C3S with the commercial utilisation of some or all of your works, you can now declare this intent to the German Patent and Trademark Office.
+    <h3 i18n:translate="intent-form-v2-headline-3" class="deform">Making History.</h3>
+    <p i18n:translate="intent-form-v2-intro-2">
+      When you participate in the crowdfunding you can become a Founding Member of C3S.
     </p>
-    <p i18n:translate="intent-form-intro-3">
-You are allowed to currently be a member of a different collecting society – a transfer is possible, even if it may be a lengthy process. At the moment, you merely confirm that you seriously consider to become a member of the new C3S. Your signature does not constitute a binding agreement to join.
+    <h3 i18n:translate="intent-form-v2-headline-4" class="deform">No cheap tricks.</h3>
+    <p i18n:translate="intent-form-v2-intro-3">
+      Signing the Declaration of Intent ist not binding. You won't become a member by signing the declaration. Neither you will have to pay.
     </p>
-    <p i18n:translate="intent-form-intro-4">
-      You have to be a composer, lyricist, musician, music producer, remixer or DJ, and you must have written, produced, performed, or mixed, at least three tracks. This means that you have created, or co-created, not less than three different works of music. We are happy about professionals or semi-professionals, but amateur musicians and prospective artists will also find their home in C3S – even if you have only just compiled your first remixes or mashups.
-    </p>
-    <p i18n:translate="intent-form-intro-5">
-      After C3S has been founded, we will use your data to ask you whether you really want to become a member. If not, your declaration will be deleted. It will also be deleted if you have second thoughts and notify us in writing that you wish to withdraw your declaration.
-    </p>
-    <p i18n:translate="intent-form-intro-6">
-      In order to prevent falsifications, we will ask you not only for your name, but also for your email and postal addresses, as it is done in petitions, too. Of course we will only use your data for the application to the German Patent and Trademark Office and will neither pass them on to third parties, nor use them for other purposes, or publish them. They will be stored in Germany by the registered association OpenMusicContest.org as representative of the C3S foundation initiative, according to the requirements of the Federal Data Protection Act. 
-    </p>
-    <p i18n:translate="intent-form-intro-7">
-By sending an email to data@c3s.cc you may order your data to be deleted at any time, and without giving reasons. Upon request to the same address, you may also ask for information about the data we have stored about you. However, a deletion of your data will have the result that we can not get in touch with you, should you wish to join the collecting society. You can read the details about how we handle your data (Data Protection Declaration) separately on our website:
+    <h3 i18n:translate="intent-form-v2-headline-5" class="deform">Yay! Count me in!</h3>
+    <p i18n:translate="intent-form-v2-intro-4">
+      During the crowdfunding you decide whether you would like to join C3S as a member or supporter. We hope you do. We are looking forward to welcome you on board!
     </p>
     <p i18n:translate="">
       <a href="/disclaimer" target="_blank" 
@@ -67,6 +62,7 @@ By sending an email to data@c3s.cc you may order your data to be deleted at any 
 			      i18n:name="information_about_C3S"
 			      i18n:translate="information_about_C3S">information about C3S</a> and its aims, and then we can get going!
     </p>
+    <h2 i18n:translate="intent-form-v2-headline-6" class="deform">Ok, folks -- fill in, sign it, make it happen!</h2>
     <p i18n:translate="intent-form-answer-all">
       Please answer <strong i18n:name="all" i18n:translate="all">all</strong> questions:
     </p>

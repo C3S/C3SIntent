@@ -19,6 +19,14 @@
     padding: 3px;
 }
 
+h3.deform {
+    padding-top: 50px;
+}
+
+h2.deform {
+    padding-top: 70px;
+}
+
 .deformClosebuttonActive {
    border: 0;
    cursor: pointer;

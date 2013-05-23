@@ -159,10 +159,10 @@ def declare_intent(request):
    # set default of Country select widget according to locale
     LOCALE_COUNTRY_MAPPING = {
         'de': 'DE',
-        'da': 'DK',
+   #    'da': 'DK',
         'en': 'GB',
-        'es': 'ES',
-        'fr': 'FR',
+   #    'es': 'ES',
+   #    'fr': 'FR',
         }
     country_default = LOCALE_COUNTRY_MAPPING.get(locale_name)
     if DEBUG:  # pragma: no cover
@@ -173,13 +173,9 @@ def declare_intent(request):
         """
         colander schema for declaration of intent/ application form
         """
-        firstname = colander.SchemaNode(colander.String(),
-                                       title=_(u"First Name"))
-        lastname = colander.SchemaNode(colander.String(),
-                                       title=_(u"Last Name"))
         type_of_creator = (('composer', _(u'composer')),
                            ('lyricist', _(u'lyricist')),
-                           ('musician', _(u'musician')),
+    #                      ('musician', _(u'musician')),
                            ('music producer', _(u'music producer')),
                            ('remixer', _(u'remixer')),
                            ('dj', _(u'DJ')))
@@ -187,63 +183,144 @@ def declare_intent(request):
         activity = colander.SchemaNode(
             deform.Set(),
             title=_(
-                u'Yes, I am musically active as a '
+                u'I\'m musically involved in creating at least three songs, and I\'m considering '
+                'to ask C3S to administer the rights to some of my songs. I am active as a '
                 '(multiple selection possible)'),
             widget=deform.widget.CheckboxChoiceWidget(values=type_of_creator))
 
         yes_no = (('yes', _(u'Yes')),
                   ('no', _(u'No')))
 
-        at_least_three_works = colander.SchemaNode(
-            colander.String(),
-            title=_(u'I have been the (co-)creator of at least three titles '
-                    'in one of the functions mentioned under (1)'),
-            validator=colander.OneOf([x[0] for x in yes_no]),
-            widget=deform.widget.RadioChoiceWidget(values=yes_no))
+     #   at_least_three_works = colander.SchemaNode(
+     #       colander.String(),
+     #       title=_(u'I have been the (co-)creator of at least three titles '
+     #               'in one of the functions mentioned under (1)'),
+     #       validator=colander.OneOf([x[0] for x in yes_no]),
+     #       widget=deform.widget.RadioChoiceWidget(values=yes_no))
         member_of_colsoc = colander.SchemaNode(
             colander.String(),
-            title=_(u'I am a member of a collecting society.'),
+            title=_(u'Currently, I am a member of another collecting society.'),
             validator=colander.OneOf([x[0] for x in yes_no]),
             widget=deform.widget.RadioChoiceWidget(values=yes_no),
             )
+        invest_member = colander.SchemaNode(
+            colander.String(),
+            title=_(u'I am considering to join C3S as a supporting member only. '
+                    'This option is also available to members of other collecting '
+                    'societies without quitting those.'),
+            validator=colander.OneOf([x[0] for x in yes_no]),
+            widget=deform.widget.RadioChoiceWidget(values=yes_no))
+        firstname = colander.SchemaNode(colander.String(),
+                                       title=_(u"(Real) First Name"))
+        lastname = colander.SchemaNode(colander.String(),
+                                       title=_(u"(Real) Last Name"))
         email = colander.SchemaNode(colander.String(),
                                     title=_(u'Email'),
                                     validator=colander.Email())
-        address1 = colander.SchemaNode(colander.String(),
-                                       title=_(u'Street & No.'))
-        address2 = colander.SchemaNode(colander.String(),
-                                       missing=unicode(''),
-                                       title=_(u"address cont'd"))
-        postCode = colander.SchemaNode(colander.String(),
-                                       title=_(u'Post Code'))
+      #  address1 = colander.SchemaNode(colander.String(),
+      #                                 title=_(u'Street & No.'))
+      #  address2 = colander.SchemaNode(colander.String(),
+      #                                 missing=unicode(''),
+      #                                 title=_(u"address cont'd"))
+      #  postCode = colander.SchemaNode(colander.String(),
+      #                                 title=_(u'Post Code'))
         city = colander.SchemaNode(colander.String(),
                                    title=_(u'City'))
-        region = colander.SchemaNode(
-            colander.String(),
-            title=_(u'Federal State / Province / County'),
-            missing=unicode(''))
+      #  region = colander.SchemaNode(
+      #      colander.String(),
+      #      title=_(u'Federal State / Province / County'),
+      #      missing=unicode(''))
         country = colander.SchemaNode(colander.String(),
                                       title=_(u'Country'),
                                       default=country_default,
                                       widget=deform.widget.SelectWidget(
                 values=country_codes),)
+
+        dob_day = [
+            ('01', '01'),
+            ('02', '02'),
+            ('03', '03'),
+            ('04', '04'),
+            ('05', '05'),
+            ('06', '06'),
+            ('07', '07'),
+            ('08', '08'),
+            ('09', '09'),
+            ('10', '10'),
+            ('11', '11'),
+            ('12', '12'),
+            ('13', '13'),
+            ('14', '14'),
+            ('15', '15'),
+            ('16', '16'),
+            ('17', '17'),
+            ('18', '18'),
+            ('19', '19'),
+            ('20', '20'),
+            ('21', '21'),
+            ('22', '22'),
+            ('23', '23'),
+            ('24', '24'),
+            ('25', '25'),
+            ('26', '26'),
+            ('27', '27'),
+            ('28', '28'),
+            ('29', '29'),
+            ('30', '30'),
+            ('31', '31')
+            ]
+        dob_month = [
+            ('01', '01'),
+            ('02', '02'),
+            ('03', '03'),
+            ('04', '04'),
+            ('05', '05'),
+            ('06', '06'),
+            ('07', '07'),
+            ('08', '08'),
+            ('09', '09'),
+            ('10', '10'),
+            ('11', '11'),
+            ('12', '12')
+            ]
+        dob_year = [
+            ('1974', '1974'),
+            ('1975', '1975'),
+            ('1976', '1976'),
+            ('1977', '1977')
+            ]
+       # TODO:
+       # Date of birth (dd/mm/yyyy) (three fields, dropdown?)
+        date_of_birth = colander.SchemaNode(colander.String(),
+                                      title=_(u'Date of birth (dd/mm/yyyy)'),
+                                      widget=deform.widget.SelectWidget(
+                values=dob_day),)
+
+       # TODO:
+        opt_band = colander.SchemaNode(colander.String(),
+                                   title=_(u'optional: Band/Artist name'))
+
+       # TODO:
+        opt_URL = colander.SchemaNode(colander.String(),
+                                   title=_(u'optional: Homepage'))
+
         #print(country_codes())
-        understood_declaration = colander.SchemaNode(
-            colander.String(),
-            title=_(u'I have read and understood the text of the '
-                    'declaration of intent.'),
-#            validator=colander.OneOf(),
-            widget=deform.widget.CheckboxChoiceWidget(
-                values=(('yes', _(u'Yes')),)),
-            )
-        consider_joining = colander.SchemaNode(
-            colander.String(),
-            title=_(u'I seriously consider to join the C3S and want to '
-                    'be notified via e-mail about its foundation.'),
-#            validator=colander.OneOf([x[0] for x in yes_no]),
-            widget=deform.widget.CheckboxChoiceWidget(
-                values=(('yes', _(u'Yes')),)),
-            )
+        #understood_declaration = colander.SchemaNode(
+            #colander.String(),
+            #title=_(u'I have read and understood the text of the '
+                    #'declaration of intent.'),
+##            validator=colander.OneOf(),
+            #widget=deform.widget.CheckboxChoiceWidget(
+                #values=(('yes', _(u'Yes')),)),
+            #)
+        #consider_joining = colander.SchemaNode(
+            #colander.String(),
+            #title=_(u'I seriously consider to join the C3S and want to '
+                    #'be notified via e-mail about its foundation.'),
+##            validator=colander.OneOf([x[0] for x in yes_no]),
+            #widget=deform.widget.CheckboxChoiceWidget(
+                #values=(('yes', _(u'Yes')),)),
+            #)
         noticed_dataProtection = colander.SchemaNode(
             colander.String(),
             title=_(u'I have taken note of the Data Protection Declaration '
