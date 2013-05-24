@@ -72,6 +72,8 @@ def show_disclaimer(request):
 @view_config(renderer='templates/intent.pt',
              route_name='intent')
 def declare_intent(request):
+    import datetime
+    from colander import Range
 
     # if another language was chosen by clicking on a flag
     # the add_locale_to_cookie subscriber has planted an attr on the request
@@ -291,18 +293,29 @@ def declare_intent(request):
             ]
        # TODO:
        # Date of birth (dd/mm/yyyy) (three fields, dropdown?)
-        date_of_birth = colander.SchemaNode(colander.String(),
-                                      title=_(u'Date of birth (dd/mm/yyyy)'),
-                                      widget=deform.widget.SelectWidget(
-                values=dob_day),)
+        #date_of_birth = colander.SchemaNode(colander.String(),
+                                      #title=_(u'Date of birth (dd/mm/yyyy)'),
+                                      #widget=deform.widget.SelectWidget(
+                #values=dob_day),)
+        date_of_birth = colander.SchemaNode(colander.Date(),
+                                      widget = deform.widget.DatePartsWidget(size = (4,2,2)),
+                                      validator=Range(
+                                          min=datetime.date(1913, 1, 1),
+                                          max=datetime.date(2000, 1, 1),
+                                          min_err=_(u'${val} is earlier than earliest date ${min}'),
+                                          max_err=_(u'${val} is later than latest date ${max}')
+                                          )
+                                      )
 
        # TODO:
         opt_band = colander.SchemaNode(colander.String(),
-                                   title=_(u'optional: Band/Artist name'))
+                                   title=_(u'optional: Band/Artist name'),
+                                   missing=unicode(''))
 
        # TODO:
         opt_URL = colander.SchemaNode(colander.String(),
-                                   title=_(u'optional: Homepage'))
+                                   title=_(u'optional: Homepage'),
+                                   missing=unicode(''))
 
         #print(country_codes())
         #understood_declaration = colander.SchemaNode(
