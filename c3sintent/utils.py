@@ -20,8 +20,8 @@ def generate_pdf(appstruct):
     fdf_file = tempfile.NamedTemporaryFile()
     pdf_file = tempfile.NamedTemporaryFile()
 
-    declaration_pdf_de = "pdftk/absichtserklaerung.pdf"
-    declaration_pdf_en = "pdftk/declaration-of-intent.pdf"
+    declaration_pdf_de = "pdftk/DOIv2_de.pdf"
+    declaration_pdf_en = "pdftk/DOIv2_en.pdf"
 
 # check for _LOCALE_, decide which language to use
     #print(appstruct['_LOCALE_'])
@@ -38,37 +38,29 @@ def generate_pdf(appstruct):
     fields = [
         ('FirstName', appstruct['firstname']),
         ('LastName', appstruct['lastname']),
-        ('streetNo', appstruct['address1']),
-        ('address2', appstruct['address2']),
-        ('postCode', appstruct['postCode']),
         ('city', appstruct['city']),
         ('email', appstruct['email']),
         ('country', appstruct['country']),
-        ('region', appstruct['region']),
         ('composer',
          'Yes' if appstruct['activity'].issuperset(['composer']) else 'Off'),
         ('lyricist',
          'Yes' if appstruct['activity'].issuperset(['lyricist']) else 'Off'),
-        ('musician',
-         'Yes' if appstruct['activity'].issuperset(['musician']) else 'Off'),
         ('producer',
-         'Yes' if appstruct['activity'].issuperset(
-                ['music producer']) else 'Off'),
+         'Yes' if appstruct['activity'].issuperset(['music producer']) else 'Off'),
         ('remixer',
          'Yes' if appstruct['activity'].issuperset(['remixer']) else 'Off'),
         ('dj',
          'Yes' if appstruct['activity'].issuperset(['dj']) else 'Off'),
-        ('YesDataProtection',
-         'Yes' if appstruct[
-                'noticed_dataProtection'] == u"(u'yes',)" else 'Off'),
-        ('YesDeclaration',
-         'Yes' if appstruct[
-                'understood_declaration'] == u"(u'yes',)" else 'Off'),
-        ('YesNotification',
-         'Yes' if appstruct[
-                'consider_joining'] == u"(u'yes',)" else 'Off'),
-        ('created3', 1 if appstruct['at_least_three_works'] == u'yes' else 2),
-        ('inColSoc', 1 if appstruct['member_of_colsoc'] == u'yes' else 2),
+        #('YesDataProtection',
+         #'Yes' if appstruct[
+                #'noticed_dataProtection'] == u"(u'yes',)" else 'Off'),
+        ('inColSoc', '1' if appstruct['member_of_colsoc'] == u'yes' else '2'),
+        ##('inColSocName', appstruct['member_of_colsoc'] if appstruct['member_of_colsoc'] == u'yes' else ''),
+
+        ('URL', appstruct['opt_URL']),
+        ('bandPseudonym', appstruct['opt_band']),
+        ('investMmbr', '1' if appstruct['invest_member'] == u'yes' else '2'),
+        ('dateOfBirth', appstruct['date_of_birth'].strftime("%d.%m.%Y")),
         ]
 
 # generate fdf string
@@ -128,29 +120,26 @@ def generate_csv(appstruct):
 
     csv = tempfile.TemporaryFile()
     csv.write(
-        (u"%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s") % (
+        (u"%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s") % (
             date.today().strftime("%Y-%m-%d"),  # e.g. 2012-09-02
             'unknown',  # #                           # place of signature
             'pending...',  # #                           # has signature
             unicode(appstruct['firstname']),  # #    # lastname
             unicode(appstruct['lastname']),  # #    # surname
             unicode(appstruct['email']),  # #   # email
-            unicode(appstruct['address1']),  # ## street & no
-            unicode(appstruct['address2']),  # ## address cont'd
-            unicode(appstruct['postCode']),
             unicode(appstruct['city']),
-            unicode(appstruct['region']),
             unicode(appstruct['country']),  # # # country
+            'j' if appstruct['invest_member'] == 'yes' else 'n',
+            unicode(appstruct['opt_URL']),
+            unicode(appstruct['opt_band']),
+            unicode(appstruct['date_of_birth']),
             'j' if 'composer' in appstruct['activity'] else 'n',
             'j' if 'lyricist' in appstruct['activity'] else 'n',
-            'j' if 'musician' in appstruct['activity'] else 'n',
             'j' if 'producer' in appstruct['activity'] else 'n',
             'j' if 'remixer' in appstruct['activity'] else 'n',
             'j' if 'dj' in appstruct['activity'] else 'n',
-            'j' if appstruct['at_least_three_works'] == 'yes' else 'n',
             'j' if appstruct['member_of_colsoc'] == 'yes' else 'n',
-            'j' if appstruct['understood_declaration'] == 'yes' else 'n',
-            'j' if appstruct['consider_joining'] == 'yes' else 'n',
+            #unicode(appstruct['inColSocName']),
             'j' if appstruct['noticed_dataProtection'] == 'yes' else 'n',
             ))
     # print for debugging? seek to beginning!
@@ -170,38 +159,33 @@ def make_mail_body(appstruct):
     unencrypted = u"""
 Yay!
 we got a declaration of intent through the form: \n
-firstname:                      %s
-lastname:                       %s
+first name:                     %s
+last name:                      %s
+date of birth:                  %s
 email:                          %s
-street & no:                    %s
-address2:                       %s
-postcode:                       %s
 city:                           %s
 country:                        %s
-region:                         %s
+investing member:               %s
+homepage:                       %s
+band/pseudonym:                 %s
 
 activities:                     %s
-created3:                       %s
 member of coll. soc.:           %s
-understood declaration:         %s
-consider joining                %s
 noticed data protection:        %s
 
 that's it.. bye!""" % (
         unicode(appstruct['firstname']),
         unicode(appstruct['lastname']),
+        unicode(appstruct['date_of_birth'].strftime("%d.%m.%Y")),
         unicode(appstruct['email']),
-        unicode(appstruct['address1']),
-        unicode(appstruct['address2']),
-        unicode(appstruct['postCode']),
         unicode(appstruct['city']),
         unicode(appstruct['country']),
-        unicode(appstruct['region']),
+        unicode(appstruct['invest_member']),
+        unicode(appstruct['opt_URL']),
+        unicode(appstruct['opt_band']),
         the_activities,
-        unicode(appstruct['at_least_three_works']),
         unicode(appstruct['member_of_colsoc']),
-        unicode(appstruct['understood_declaration']),
-        unicode(appstruct['consider_joining']),
+        #unicode(appstruct['inColSocName']),
         unicode(appstruct['noticed_dataProtection']),
         )
 
@@ -213,9 +197,9 @@ def accountant_mail(appstruct):
     unencrypted = make_mail_body(appstruct)
 
     message = Message(
-        subject="[c3s] Yes! a new letter of intent",
+        subject="[C3S] Yes! a new letter of intent",
         sender="noreply@c3s.cc",
-        recipients=["c@c3s.cc"],
+        recipients=["m@c3s.cc"],
         body=unicode(encrypt_with_gnupg((unencrypted)))
         )
 

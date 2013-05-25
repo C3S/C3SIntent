@@ -205,6 +205,7 @@ def declare_intent(request):
             validator=colander.OneOf([x[0] for x in yes_no]),
             widget=deform.widget.RadioChoiceWidget(values=yes_no),
             )
+        ## TODO: inColSocName if member_of_colsoc = yes
         invest_member = colander.SchemaNode(
             colander.String(),
             title=_(u'I am considering to join C3S as a supporting member only. '
@@ -238,65 +239,9 @@ def declare_intent(request):
                                       widget=deform.widget.SelectWidget(
                 values=country_codes),)
 
-        dob_day = [
-            ('01', '01'),
-            ('02', '02'),
-            ('03', '03'),
-            ('04', '04'),
-            ('05', '05'),
-            ('06', '06'),
-            ('07', '07'),
-            ('08', '08'),
-            ('09', '09'),
-            ('10', '10'),
-            ('11', '11'),
-            ('12', '12'),
-            ('13', '13'),
-            ('14', '14'),
-            ('15', '15'),
-            ('16', '16'),
-            ('17', '17'),
-            ('18', '18'),
-            ('19', '19'),
-            ('20', '20'),
-            ('21', '21'),
-            ('22', '22'),
-            ('23', '23'),
-            ('24', '24'),
-            ('25', '25'),
-            ('26', '26'),
-            ('27', '27'),
-            ('28', '28'),
-            ('29', '29'),
-            ('30', '30'),
-            ('31', '31')
-            ]
-        dob_month = [
-            ('01', '01'),
-            ('02', '02'),
-            ('03', '03'),
-            ('04', '04'),
-            ('05', '05'),
-            ('06', '06'),
-            ('07', '07'),
-            ('08', '08'),
-            ('09', '09'),
-            ('10', '10'),
-            ('11', '11'),
-            ('12', '12')
-            ]
-        dob_year = [
-            ('1974', '1974'),
-            ('1975', '1975'),
-            ('1976', '1976'),
-            ('1977', '1977')
-            ]
        # TODO:
-       # Date of birth (dd/mm/yyyy) (three fields, dropdown?)
-        #date_of_birth = colander.SchemaNode(colander.String(),
-                                      #title=_(u'Date of birth (dd/mm/yyyy)'),
-                                      #widget=deform.widget.SelectWidget(
-                #values=dob_day),)
+       # Date of birth (dd/mm/yyyy) (three fields)
+       # size doesn't have any effect?!
         date_of_birth = colander.SchemaNode(colander.Date(),
                                       widget = deform.widget.DatePartsWidget(size = (4,2,2)),
                                       validator=Range(
@@ -307,12 +252,10 @@ def declare_intent(request):
                                           )
                                       )
 
-       # TODO:
         opt_band = colander.SchemaNode(colander.String(),
                                    title=_(u'optional: Band/Artist name'),
                                    missing=unicode(''))
 
-       # TODO:
         opt_URL = colander.SchemaNode(colander.String(),
                                    title=_(u'optional: Homepage'),
                                    missing=unicode(''))
