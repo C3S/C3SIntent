@@ -6,6 +6,7 @@
     display: block;
     font-weight:bold;
     padding-top: 20px;
+    text-indent: -20px;
 }
 
 .deform ul {
@@ -22,11 +23,20 @@
 
 h3.deform {
     padding-top: 50px;
+    text-indent: -35px;
 }
 
 h2.deform {
     padding-top: 70px;
+    text-indent: -65px;
 }
+
+p.infoIndent {
+    font-weight: bold;
+    text-indent: -35px;
+    font-size: 110%;
+}
+
 
 .deformClosebuttonActive {
    border: 0;

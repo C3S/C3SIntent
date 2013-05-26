@@ -30,6 +30,7 @@ def main(global_config, **settings):
     # intent form
     config.add_route('intent', '/')
     config.add_route('disclaimer', '/disclaimer')
+    config.add_route('faq', '/faq')
 
     config.scan()
     return config.make_wsgi_app()

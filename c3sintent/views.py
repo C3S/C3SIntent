@@ -69,6 +69,14 @@ def show_disclaimer(request):
     return {'foo': 'bar'}  # dummy values: template contains all text
 
 
+@view_config(renderer='templates/faq.pt',
+             route_name='faq')
+def show_faq(request):
+    if hasattr(request, '_REDIRECT_'):
+        return HTTPFound(location=request.route_url('faq'),
+                         headers=request.response.headers)
+    return {'foo': 'bar'}  # dummy values: template contains all text
+
 @view_config(renderer='templates/intent.pt',
              route_name='intent')
 def declare_intent(request):

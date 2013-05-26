@@ -52,10 +52,15 @@
     <p i18n:translate="intent-form-v2-intro-4">
       During the crowdfunding you decide whether you would like to join C3S as a member or supporter. We hope you do. We are looking forward to welcome you on board!
     </p>
-    <p i18n:translate="">
+    <p i18n:translate="" class="infoIndent">
       <a href="/disclaimer" target="_blank" 
 	 i18n:name="intent-form-disclaimer-title"
 	 i18n:translate="intent-form-disclaimer-title">Disclaimer (Data Protection)</a>
+    </p>
+    <p i18n:translate="" class="infoIndent">
+      <a href="/faq" target="_blank" 
+	 i18n:name="intent-form-faq-title"
+	 i18n:translate="intent-form-faq-title">Frequently Asked Questions</a>
     </p>
     <p i18n:translate="intent-form-reading-instructions">
       At first, please get <a href="http://www.c3s.cc" target="_blank"
