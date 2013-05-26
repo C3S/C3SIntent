@@ -183,12 +183,13 @@ def declare_intent(request):
                            ('dj', _(u'DJ')))
 
         activity = colander.SchemaNode(
-            deform.Set(),
+            deform.Set(allow_empty=True),
             title=_(
                 u'I\'m musically involved in creating at least three songs, and I\'m considering '
                 'to ask C3S to administer the rights to some of my songs. I am active as a '
                 '(multiple selection possible)'),
-            widget=deform.widget.CheckboxChoiceWidget(values=type_of_creator))
+            widget=deform.widget.CheckboxChoiceWidget(values=type_of_creator),
+            missing=unicode(''))
 
         yes_no = (('yes', _(u'Yes')),
                   ('no', _(u'No')))
@@ -206,6 +207,9 @@ def declare_intent(request):
             widget=deform.widget.RadioChoiceWidget(values=yes_no),
             )
         ## TODO: inColSocName if member_of_colsoc = yes
+        name_of_colsoc = colander.SchemaNode(colander.String(),
+                                      title=_(u'If so, which one?'),
+                                      missing=unicode(''))
         invest_member = colander.SchemaNode(
             colander.String(),
             title=_(u'I am considering to join C3S as a supporting member only. '

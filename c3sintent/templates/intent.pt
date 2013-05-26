@@ -33,12 +33,12 @@
     <h3 i18n:translate="intent-form-v2-headline-1" class="deform">Start the fire!</h3>
     <ul>
       <li i18n:translate="intent-form-v2-intro-1-step1">Step 1 -- Want to be a part of the action? Make your stand and give us your GO by signing!</li>
-      <li i18n:translate="intent-form-v2-intro-1-step2">Step 2 -- 1.000 signatures in -- then C3S is being founded.</li>
+      <li i18n:translate="intent-form-v2-intro-1-step2">Step 2 -- 1,000 signatures in -- then C3S is being founded.</li>
       <li i18n:translate="intent-form-v2-intro-1-step3">Step 3 -- You decide to become a founding member and make history.</li>
     </ul>
     <h3 i18n:translate="intent-form-v2-headline-2" class="deform">What's going on.</h3>
     <p i18n:translate="intent-form-v2-intro-1">
-      By signing the form you declare your intent to join C3S at its founding. In turn, you are going to receive a note telling you where &amp; when the crowdfunding for launching C3S will take place - even before the public. Then you can purchase shares in C3S, plus exclusive rewards &amp; goodies in extremely limited numbers. To be honest, we are already heavily adrenalised -- 'cause something big is coming! Something, that is only available with us. Be one of the first to pick your own reward!
+      By signing the form you declare your intent to join C3S at its founding. In turn, you are going to receive a note telling you where &amp; when the crowdfunding for launching C3S will take place - even before the public. Then you can purchase shares in C3S, plus exclusive rewards &amp; goodies in extremely limited numbers. To be honest, we are already heavily adrenalised -- 'cause something big is coming! Something that is only available with us. Be one of the first to pick your own reward!
     </p>
     <h3 i18n:translate="intent-form-v2-headline-3" class="deform">Making History.</h3>
     <p i18n:translate="intent-form-v2-intro-2">
@@ -63,8 +63,8 @@
 			      i18n:translate="information_about_C3S">information about C3S</a> and its aims, and then we can get going!
     </p>
     <h2 i18n:translate="intent-form-v2-headline-6" class="deform">Ok, folks -- fill in, sign it, make it happen!</h2>
-    <p i18n:translate="intent-form-answer-all">
-      Please answer <strong i18n:name="all" i18n:translate="all">all</strong> questions:
+    <p i18n:translate="intent-form-v2-answer-all">
+      All questions <strong i18n:name="with_an_asterisk" i18n:translate="with_an_asterisk">with an asterisk</strong> must be answered:
     </p>
     <div id="form" tal:content="structure form"/>
   </tal:block>

@@ -36,11 +36,11 @@ def generate_pdf(appstruct):
 # here we gather all information from the supplied data to prepare pdf-filling
 
     fields = [
-        ('FirstName', appstruct['firstname']),
-        ('LastName', appstruct['lastname']),
-        ('city', appstruct['city']),
-        ('email', appstruct['email']),
-        ('country', appstruct['country']),
+        ('FirstName', unicode(appstruct['firstname'])),
+        ('LastName', unicode(appstruct['lastname'])),
+        ('city', unicode(appstruct['city'])),
+        ('email', unicode(appstruct['email'])),
+        ('country', unicode(appstruct['country'])),
         ('composer',
          'Yes' if appstruct['activity'].issuperset(['composer']) else 'Off'),
         ('lyricist',
@@ -55,10 +55,9 @@ def generate_pdf(appstruct):
          #'Yes' if appstruct[
                 #'noticed_dataProtection'] == u"(u'yes',)" else 'Off'),
         ('inColSoc', '1' if appstruct['member_of_colsoc'] == u'yes' else '2'),
-        ##('inColSocName', appstruct['member_of_colsoc'] if appstruct['member_of_colsoc'] == u'yes' else ''),
-
-        ('URL', appstruct['opt_URL']),
-        ('bandPseudonym', appstruct['opt_band']),
+        ('inColSocName', unicode(appstruct['name_of_colsoc']) if appstruct['member_of_colsoc'] == u'yes' else ''),
+        ('URL', unicode(appstruct['opt_URL'])),
+        ('bandPseudonym', unicode(appstruct['opt_band'])),
         ('investMmbr', '1' if appstruct['invest_member'] == u'yes' else '2'),
         ('dateOfBirth', appstruct['date_of_birth'].strftime("%d.%m.%Y")),
         ]
@@ -114,15 +113,14 @@ def generate_csv(appstruct):
     """
     from datetime import date
     # format:
-    # date; place; signature; firstname; lastname; email; streetNo; address2;
-    # postCode; city; country; composer; lyricist; musician; producer; remixer;
-    # dj; 3works; member_colsoc; read_all; contact; dataProtection
+    # date; signature; firstname; lastname; email;
+    # city; country; composer; lyricist; producer; remixer;
+    # dj; member_colsoc; dataProtection
 
     csv = tempfile.TemporaryFile()
     csv.write(
         (u"%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s") % (
             date.today().strftime("%Y-%m-%d"),  # e.g. 2012-09-02
-            'unknown',  # #                           # place of signature
             'pending...',  # #                           # has signature
             unicode(appstruct['firstname']),  # #    # lastname
             unicode(appstruct['lastname']),  # #    # surname
@@ -139,7 +137,7 @@ def generate_csv(appstruct):
             'j' if 'remixer' in appstruct['activity'] else 'n',
             'j' if 'dj' in appstruct['activity'] else 'n',
             'j' if appstruct['member_of_colsoc'] == 'yes' else 'n',
-            #unicode(appstruct['inColSocName']),
+            unicode(appstruct['name_of_colsoc']),
             'j' if appstruct['noticed_dataProtection'] == 'yes' else 'n',
             ))
     # print for debugging? seek to beginning!
@@ -171,6 +169,7 @@ band/pseudonym:                 %s
 
 activities:                     %s
 member of coll. soc.:           %s
+  name of coll. soc.:           %s
 noticed data protection:        %s
 
 that's it.. bye!""" % (
@@ -185,7 +184,7 @@ that's it.. bye!""" % (
         unicode(appstruct['opt_band']),
         the_activities,
         unicode(appstruct['member_of_colsoc']),
-        #unicode(appstruct['inColSocName']),
+        unicode(appstruct['name_of_colsoc']),
         unicode(appstruct['noticed_dataProtection']),
         )
 
@@ -203,8 +202,8 @@ def accountant_mail(appstruct):
         body=unicode(encrypt_with_gnupg((unencrypted)))
         )
 
-    attachment = Attachment("foo.gpg", "application/gpg-encryption",
-                            unicode(encrypt_with_gnupg(u"foo to the bar!")))
+    attachment = Attachment("DOI.csv.gpg", "application/gpg-encryption",
+                            unicode(encrypt_with_gnupg(generate_csv(appstruct))))
     # TODO: make attachment contents a .csv with the data supplied.
     message.attach(attachment)
 
