@@ -15,11 +15,11 @@
       <a href="/disclaimer?de"><img src="static/images/de.png" title="Deutsch"
 				   alt="auf deutsche Sprache umschalten" /></a>
     </div>
-    <p i18n:translate="disclaimer-paragraph-1">
-      After it has been founded, we will use the data you have provided in the declaration of intent to join the Cultural Commons Collecting Society (C3S) in order to ask you whether you really want to become a member. If not, your declaration will be deleted. It will also be deleted if you have second thoughts and notify us in writing that you wish to withdraw your declaration.
+    <p i18n:translate="disclaimer-v2-paragraph-1">
+      We will use the data you have provided in the Declaration of Intent to join the Cultural Commons Collecting Society (C3S) in order to ask you whether you really want to become a member. If not, your declaration will be deleted. It will also be deleted if you have second thoughts and notify us in writing that you wish to withdraw your declaration.
     </p>
-    <p i18n:translate="disclaimer-paragraph-2">
-      In order to prevent falsifications, we will ask you not only for your name, but also for your e-mail and postal addresses, as it is done in petitions, too. Of course we will only use your data for the application to the German Patent and Trademark Office and will neither pass them on to third parties, nor use them for other purposes, or publish them. They will be stored in Germany by the registered association OpenMusicContest.org as representative of the C3S foundation initiative, according to the requirements of the Federal Data Protection Act.
+    <p i18n:translate="disclaimer-v2-paragraph-2">
+      In order to prevent falsifications, we will ask you not only for your name, but also for your e-mail and date of birth. Of course we will only use your data for the founding process of the C3S and will neither pass them on to third parties, nor use them for other purposes, or publish them. They will be stored in Germany by the registered association OpenMusicContest.org as representative of the C3S foundation initiative, according to the requirements of the Federal Data Protection Act.
     </p>
     <p i18n:translate="disclaimer-paragraph-3-part1">
 	By sending an e-mail to

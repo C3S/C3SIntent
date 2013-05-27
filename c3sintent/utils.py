@@ -185,7 +185,7 @@ that's it.. bye!""" % (
         the_activities,
         unicode(appstruct['member_of_colsoc']),
         unicode(appstruct['name_of_colsoc']),
-        unicode(appstruct['noticed_dataProtection']),
+        appstruct['noticed_dataProtection'],
         )
 
     return unencrypted
