@@ -254,15 +254,17 @@ def declare_intent(request):
        # TODO:
        # Date of birth (dd/mm/yyyy) (three fields)
        # size doesn't have any effect?!
-        date_of_birth = colander.SchemaNode(colander.Date(),
-                                      widget = deform.widget.DatePartsWidget(size = (4,2,2)),
-                                      validator=Range(
-                                          min=datetime.date(1913, 1, 1),
-                                          max=datetime.date(2000, 1, 1),
-                                          min_err=_(u'${val} is earlier than earliest date ${min}'),
-                                          max_err=_(u'${val} is later than latest date ${max}')
-                                          )
-                                      )
+        date_of_birth = colander.SchemaNode(
+            colander.Date(),
+            #widget = deform.widget.DatePartsWidget(size = (4,2,2)),
+            default=datetime.date(2013, 1, 1),
+            validator=Range(
+                min=datetime.date(1913, 1, 1),
+                max=datetime.date(2000, 1, 1),
+                min_err=_(u'${val} is earlier than earliest date ${min}'),
+                max_err=_(u'${val} is later than latest date ${max}')
+            )
+        )
 
         opt_band = colander.SchemaNode(colander.String(),
                                    title=_(u'optional: Band/Artist name'),
