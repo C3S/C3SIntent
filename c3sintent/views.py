@@ -83,6 +83,13 @@ def declare_intent(request):
     import datetime
     from colander import Range
 
+    LOGGING = True
+
+    if LOGGING:  # pragma: no cover
+        import logging
+        log = logging.getLogger(__name__)
+        log.info("declare_intent...")
+
     # if another language was chosen by clicking on a flag
     # the add_locale_to_cookie subscriber has planted an attr on the request
     if hasattr(request, '_REDIRECT_'):

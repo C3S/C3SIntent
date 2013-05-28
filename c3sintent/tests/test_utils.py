@@ -237,7 +237,7 @@ class TestUtilities(unittest.TestCase):
         from pyramid_mailer.message import Message
 
         self.assertTrue(isinstance(result, Message))
-        self.assertTrue('c@c3s.cc' in result.recipients)
+        self.assertTrue('yes@c3s.cc' in result.recipients)
         self.failUnless('-----BEGIN PGP MESSAGE-----' in result.body,
                         'something missing in the mail body!')
         self.failUnless('-----END PGP MESSAGE-----' in result.body,

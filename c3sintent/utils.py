@@ -20,8 +20,15 @@ def generate_pdf(appstruct):
     fdf_file = tempfile.NamedTemporaryFile()
     pdf_file = tempfile.NamedTemporaryFile()
 
-    declaration_pdf_de = "pdftk/DOIv2_de.pdf"
-    declaration_pdf_en = "pdftk/DOIv2_en.pdf"
+    #import logging
+    #log = logging.getLogger(__name__)
+    #log.info("test ...! ")
+
+    import os
+    here = os.path.dirname(__file__)
+    declaration_pdf_de = os.path.join(here, "../pdftk/DOIv2_de.pdf")
+    declaration_pdf_en = os.path.join(here, "../pdftk/DOIv2_en.pdf")
+
 
 # check for _LOCALE_, decide which language to use
     #print(appstruct['_LOCALE_'])
@@ -198,7 +205,7 @@ def accountant_mail(appstruct):
     message = Message(
         subject="[C3S] Yes! a new letter of intent",
         sender="noreply@c3s.cc",
-        recipients=["m@c3s.cc"],
+        recipients=["yes@c3s.cc"],
         body=unicode(encrypt_with_gnupg((unencrypted)))
         )
 
