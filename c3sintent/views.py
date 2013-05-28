@@ -233,9 +233,9 @@ def declare_intent(request):
             validator=colander.OneOf([x[0] for x in yes_no]),
             widget=deform.widget.RadioChoiceWidget(values=yes_no))
         firstname = colander.SchemaNode(colander.String(),
-                                       title=_(u"(Real) First Name"))
+                                       title=_(u'(Real) First Name'))
         lastname = colander.SchemaNode(colander.String(),
-                                       title=_(u"(Real) Last Name"))
+                                       title=_(u'(Real) Last Name'))
         email = colander.SchemaNode(colander.String(),
                                     title=_(u'Email'),
                                     validator=colander.Email())
@@ -305,7 +305,7 @@ def declare_intent(request):
                     'at http://www.c3s.cc/disclaimer-en.html and agree with '
                     'it. I know that I may revoke this consent at any time.'),
 #            validator=colander.OneOf([x[0] for x in yes_no]),
-            widget=deform.widget.CheckboxChoiceWidget(
+            widget=deform.widget.RadioChoiceWidget(
                 values=(('yes', _(u'Yes')),)),
             )
         _LOCALE_ = colander.SchemaNode(colander.String(),
