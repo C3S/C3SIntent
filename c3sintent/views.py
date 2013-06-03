@@ -77,6 +77,43 @@ def show_faq(request):
                          headers=request.response.headers)
     return {'foo': 'bar'}  # dummy values: template contains all text
 
+
+@view_config(renderer='templates/success.pt',
+             route_name='success')
+def show_success(request):
+    """
+    This view shows a success page
+    """
+    #check if user has used form or 'guessed' this URL
+    if ('appstruct' in request.session):
+        # we do have valid info from the form in the session
+        appstruct = request.session['appstruct']
+        activities = ''
+        for act in appstruct['activity']:
+            #print act
+            activities += act + ', '
+        return {
+            'firstname': appstruct['firstname'],
+            'lastname': appstruct['lastname'],
+            'activities': activities
+        }
+    # 'else': send user to the form
+    return HTTPFound(location=request.route_url('intent'))
+
+
+@view_config(route_name='success_pdf')
+def show_success_pdf(request):
+    """
+    This view just returns a PDF, given there is valid info in session
+    """
+    #check if user has used form or 'guessed' this URL
+    if ('appstruct' in request.session):
+        # we do have valid info from the form in the session
+        return generate_pdf(request.session['appstruct'])
+    # 'else': send user to the form
+    return HTTPFound(location=request.route_url('intent'))
+
+
 @view_config(renderer='templates/intent.pt',
              route_name='intent')
 def declare_intent(request):
@@ -341,8 +378,34 @@ def declare_intent(request):
         # prepare mail
         the_mail = accountant_mail(appstruct)
         mailer.send(the_mail)
+        
 
-        return generate_pdf(appstruct)
+        #return generate_pdf(appstruct)  # would just return a PDF
+
+        # redirect to success page, then return the PDF
+        # first, store appstruct in session
+        request.session['appstruct'] = appstruct
+        #from pyramid.httpexceptions import HTTPFound
+        return HTTPFound(  # redirect to success page
+            location=request.route_url('success'),
+        )
+
+    # if the form was submitted and gathered info shown on the success page,
+    # BUT the user wants to correct their information:
+    else:
+        if ('appstruct' in request.session):
+            #print("form was not submitted, but found appstruct in session.")
+            appstruct = request.session['appstruct']
+            #print("the appstruct: %s") % appstruct
+            # pre-fill the form with the values from last time
+            form.set_appstruct(appstruct)
+            #import pdb
+            #pdb.set_trace()
+            #form = deform.Form(schema,
+            #           buttons=[deform.Button('submit', _(u'Submit'))],
+            #           use_ajax=True,
+            #           renderer=zpt_renderer
+            #           )
 
     html = form.render()
 
