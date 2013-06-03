@@ -43,8 +43,8 @@
       Your PDF is ready, you can download it here:
     </p>
     <p>
-      <a href="/C3S_DeclarationOfIntent_${firstname.title()}${lastname.title()}.pdf">
-        C3S_DeclarationOfIntent_${firstname.title()}${lastname.title()}.pdf
+      <a href="/C3S_DeclarationOfIntent_${namepart}.pdf">
+        C3S_DeclarationOfIntent_${namepart}.pdf
       </a>
     </p>
     <p>

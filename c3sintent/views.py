@@ -72,7 +72,7 @@ def show_disclaimer(request):
 @view_config(renderer='templates/faq.pt',
              route_name='faq')
 def show_faq(request):
-    if hasattr(request, '_REDIRECT_'):
+    if hasattr(request, '_REDIRECT_'):  # pragma: no cover
         return HTTPFound(location=request.route_url('faq'),
                          headers=request.response.headers)
     return {'foo': 'bar'}  # dummy values: template contains all text
@@ -88,13 +88,22 @@ def show_success(request):
     if ('appstruct' in request.session):
         # we do have valid info from the form in the session
         appstruct = request.session['appstruct']
+        # gather activities for easier display in template
         activities = ''
         for act in appstruct['activity']:
             #print act
             activities += act + ', '
+        # prepare namepart of pdf download URL
+        namepart = appstruct['firstname'].title() + appstruct['lastname'].title()
+        import re
+        PdfFileNamePart = re.sub(  # replace characters
+            '[^a-zA-Z0-9]',  # other than these
+            '_',  # with an underscore
+            namepart)
         return {
             'firstname': appstruct['firstname'],
             'lastname': appstruct['lastname'],
+            'namepart': PdfFileNamePart,
             'activities': activities
         }
     # 'else': send user to the form
@@ -117,6 +126,9 @@ def show_success_pdf(request):
 @view_config(renderer='templates/intent.pt',
              route_name='intent')
 def declare_intent(request):
+    """
+    This is the main form view: Declaration of Intent
+    """
     import datetime
     from colander import Range
 
@@ -139,7 +151,7 @@ def declare_intent(request):
         request._LOCALE_ = _query
         locale_name = _query
         #print("locale_name (from query_string): " + locale_name)
-        from pyramid.httpexceptions import HTTPFound
+        #from pyramid.httpexceptions import HTTPFound
         #print("XXXXXXXXXXXXXXX ==> REDIRECTING ")
         return HTTPFound(location=request.route_url('intent'),
                          headers=request.response.headers)
@@ -207,7 +219,8 @@ def declare_intent(request):
         ('PT', _(u'Portugal')),
         ('SK', _(u'Slovakia')),
         ('SI', _(u'Slovenia')),
-        ('SE', _(u'Sweden'))
+        ('SE', _(u'Sweden')),
+        ('XX', _(u'other'))
         ]
 
    # set default of Country select widget according to locale
@@ -237,14 +250,15 @@ def declare_intent(request):
         activity = colander.SchemaNode(
             deform.Set(allow_empty=True),
             title=_(
-                u'I\'m musically involved in creating at least three songs, and I\'m considering '
-                'to ask C3S to administer the rights to some of my songs. I am active as a '
-                '(multiple selection possible)'),
+                u"I'm musically involved in creating at least three songs, "
+                "and I\'m considering to ask C3S to administer the rights "
+                " to some of my songs. I am active as a "
+                "(multiple selection possible)"),
             widget=deform.widget.CheckboxChoiceWidget(values=type_of_creator),
             missing=unicode(''))
 
-        yes_no = (('yes', _(u'Yes')),
-                  ('no', _(u'No')))
+        yes_no = ((u'yes', _(u'Yes')),
+                  (u'no', _(u'No')))
 
      #   at_least_three_works = colander.SchemaNode(
      #       colander.String(),
@@ -269,13 +283,16 @@ def declare_intent(request):
                     'societies without quitting those.'),
             validator=colander.OneOf([x[0] for x in yes_no]),
             widget=deform.widget.RadioChoiceWidget(values=yes_no))
-        firstname = colander.SchemaNode(colander.String(),
-                                       title=_(u'(Real) First Name'))
-        lastname = colander.SchemaNode(colander.String(),
-                                       title=_(u'(Real) Last Name'))
-        email = colander.SchemaNode(colander.String(),
-                                    title=_(u'Email'),
-                                    validator=colander.Email())
+        firstname = colander.SchemaNode(
+            colander.String(),
+            title=_(u"(Real) First Name"))
+        lastname = colander.SchemaNode(
+            colander.String(),
+            title=_(u"(Real) Last Name"))
+        email = colander.SchemaNode(
+            colander.String(),
+            title=_(u'Email'),
+            validator=colander.Email())
       #  address1 = colander.SchemaNode(colander.String(),
       #                                 title=_(u'Street & No.'))
       #  address2 = colander.SchemaNode(colander.String(),
@@ -283,16 +300,18 @@ def declare_intent(request):
       #                                 title=_(u"address cont'd"))
       #  postCode = colander.SchemaNode(colander.String(),
       #                                 title=_(u'Post Code'))
-        city = colander.SchemaNode(colander.String(),
-                                   title=_(u'City'))
+        city = colander.SchemaNode(
+            colander.String(),
+            title=_(u'City'))
       #  region = colander.SchemaNode(
       #      colander.String(),
       #      title=_(u'Federal State / Province / County'),
       #      missing=unicode(''))
-        country = colander.SchemaNode(colander.String(),
-                                      title=_(u'Country'),
-                                      default=country_default,
-                                      widget=deform.widget.SelectWidget(
+        country = colander.SchemaNode(
+            colander.String(),
+            title=_(u'Country'),
+            default=country_default,
+            widget=deform.widget.SelectWidget(
                 values=country_codes),)
 
        # TODO:
@@ -300,7 +319,9 @@ def declare_intent(request):
        # size doesn't have any effect?!
         date_of_birth = colander.SchemaNode(
             colander.Date(),
-            #widget = deform.widget.DatePartsWidget(size = (4,2,2)),
+            title=_(u'Date of Birth'),
+            css_class="hasDatePicker",
+            #widget = deform.widget.DatePWidget(),
             default=datetime.date(2013, 1, 1),
             validator=Range(
                 min=datetime.date(1913, 1, 1),
@@ -310,13 +331,15 @@ def declare_intent(request):
             )
         )
 
-        opt_band = colander.SchemaNode(colander.String(),
-                                   title=_(u'optional: Band/Artist name'),
-                                   missing=unicode(''))
+        opt_band = colander.SchemaNode(
+            colander.String(),
+            title=_(u'optional: Band/Artist name'),
+            missing=u'')
 
-        opt_URL = colander.SchemaNode(colander.String(),
-                                   title=_(u'optional: Homepage'),
-                                   missing=unicode(''))
+        opt_URL = colander.SchemaNode(
+            colander.String(),
+            title=_(u'optional: Homepage'),
+            missing=u'')
 
         #print(country_codes())
         #understood_declaration = colander.SchemaNode(
@@ -342,27 +365,35 @@ def declare_intent(request):
                     'at http://www.c3s.cc/disclaimer-en.html and agree with '
                     'it. I know that I may revoke this consent at any time.'),
 #            validator=colander.OneOf([x[0] for x in yes_no]),
-            widget=deform.widget.RadioChoiceWidget(
+            widget=deform.widget.CheckboxChoiceWidget(
                 values=(('yes', _(u'Yes')),)),
-            )
+        )
         _LOCALE_ = colander.SchemaNode(colander.String(),
                                        widget=deform.widget.HiddenWidget(),
                                        default=locale_name)
 
     schema = DeclarationOfIntent()
 
-    form = deform.Form(schema,
-                       buttons=[deform.Button('submit', _(u'Submit'))],
-                       use_ajax=True,
-                       renderer=zpt_renderer
-                       )
+    form = deform.Form(
+        schema,
+        buttons=[
+            deform.Button('submit', _(u'Submit')),
+            deform.Button('reset', _(u'Reset'))
+        ],
+        use_ajax=True,
+        renderer=zpt_renderer
+    )
 
+    # if the form has been used and SUBMITTED, check contents
     if 'submit' in request.POST:
         controls = request.POST.items()
         try:
             appstruct = form.validate(controls)
             if DEBUG:  # pragma: no cover
-                print(appstruct)
+                print("the appstruct from the form: %s \n") % appstruct
+                #for thing in appstruct:
+                #    print("the thing: %s") % thing
+                #    print("type: %s") % type(thing)
         except ValidationFailure, e:
             print(e)
             #message.append(
@@ -378,7 +409,7 @@ def declare_intent(request):
         # prepare mail
         the_mail = accountant_mail(appstruct)
         mailer.send(the_mail)
-        
+        #log.info("NOT sending mail...")
 
         #return generate_pdf(appstruct)  # would just return a PDF
 
