@@ -27,7 +27,7 @@
     </div>
     <p>
       <strong i18n:translate="intent-form-v2-note">
-        After submitting the form below, you will be presented with a PDF download (~90 KB) with your data filled in. Please print it out entirely. Take your time and read them carefully - and don't forget to sign! Send all (!) pages scanned or printed to C3S. Please find the addresses on the first page. We will receive your data via encrypted email -- and then wait for your signature to make it valid!
+        After submitting the form below, you will be presented with a PDF download (~50 KB) with your data filled in. Please print it out entirely. Take your time and read them carefully - and don't forget to sign! Send all (!) pages scanned or printed to C3S. Please find the addresses on the first page. We will receive your data via encrypted email -- and then wait for your signature to make it valid!
       </strong>
     </p>
     <h3 i18n:translate="intent-form-v2-headline-1" class="deform">Start the fire!</h3>

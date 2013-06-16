@@ -31,6 +31,8 @@ def main(global_config, **settings):
     config.add_route('intent', '/')
     config.add_route('disclaimer', '/disclaimer')
     config.add_route('faq', '/faq')
+    config.add_route('success', '/success')
+    config.add_route('success_pdf', '/C3S_DeclarationOfIntent_{namepart}.pdf')
 
     config.scan()
     return config.make_wsgi_app()

@@ -23,6 +23,7 @@ requires = [
     'lingua',
     'waitress',
     'python-gnupg',
+    'unicodecsv',
     ]
 # for the translations machinery using transifex you also need to
 # "pip install transifex-client"
