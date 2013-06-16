@@ -24,10 +24,10 @@
     </p>
     <h3 i18n:translate="faq-headline-howmany" class="deform">How many signings does C3S require for the launch?</h3>
     <p i18n:translate="faq-paragraph-howmany1">
-			We are aiming at a number of 1,000 people willing to join C3S. <strong i18n:translate="faq-strong-howmany1">With about 600 people purchasing shares at the crowdfunding the launch capital is safe.</strong> The sooner we meet this number, the sooner we launch.
+			<strong i18n:translate="faq-strong-howmany1">A number of 1,000 people willing to join C3S will make a safe launch.</strong> The sooner we meet this number, the sooner we launch. But our aim is to add far more members. More than that, we are eager to have jobs on offer for developers.
     </p>
     <p i18n:translate="faq-paragraph-howmany2">
-			Even better: The more of you are signing, the sooner we meet the requirements of German Patent and Branding Office (DPMA) which are even more strict. After legally forming C3S, DPMA is going to grant the licence to work as a collecting society. <strong i18n:translate="faq-strong-howmany2">But this time, it is about 3,000 members who are required.</strong>
+			The more of you are signing, the sooner we meet the requirements of German Patent and Branding Office (DPMA) which are even more strict. Only after legally forming C3S, DPMA can  grant the licence to work as a collecting society. <strong i18n:translate="faq-strong-howmany2">But this time, it is about 3,000 members who are required.</strong>
     </p>
     <h3 i18n:translate="faq-headline-whysign" class="deform">Who may sign the declaration?</h3>
     <p i18n:translate="faq-paragraph-whysign1">
@@ -39,13 +39,13 @@
 
     <h3 i18n:translate="faq-headline-join" class="deform">How to join?</h3>
     <p i18n:translate="faq-paragraph-join1">
-			a) Basically, as <strong i18n:translate="faq-strong-join1">a musician who writes, arranges or remixes songs</strong> (= creator / User Member) you can purchase shares in C3S during the crowdfunding. Done that, at the founding convention you may become a member. Each member participates directly in the registered cooperative. One share comes at a cost of 50 €. More than that, when leaving C3S each member will be returned the full value of shares he or she initially paid.
+			a) Basically, as <strong i18n:translate="faq-strong-join1">a musician who writes, arranges or remixes songs can purchase shares in C3S</strong> during the crowdfunding and become a member. Each member participates directly in the registered cooperative. One share comes at a cost of 50 €. Upon leaving C3S each member will be returned the full value of shares he or she initially paid.
     </p>
     <p i18n:translate="faq-paragraph-join2">
-			b) Any <strong i18n:translate="faq-strong-join2">other individuals and organisations can join as supporters of C3S</strong> (= Non-User Member) and be a valuable help to make the vision come true. As with musicians you may purchase one or more shares, but voting is the privilege of musicians.
+			b) Anyone else can join as a <strong i18n:translate="faq-strong-join2">supporter of C3S</strong> and be a valuable help to make the vision come true. As with musicians you may purchase one or more shares, but voting is the privilege of musicians.
     </p>
     <p i18n:translate="faq-paragraph-join3">
-			Anyone can become a <strong i18n:translate="faq-strong-join3">founding member</strong> if he takes part in the crowdfunding. When the crowdfunding launches, the cooperative's statutes will be available for download.
+			When the crowdfunding launches, the cooperative's statutes will be available for download.
     </p>
 
     <h3 i18n:translate="faq-headline-i11l" class="deform">No German, no European citizen? Don't fear – join anyway!</h3>
@@ -53,7 +53,7 @@
 			<strong i18n:translate="faq-strong-i11l1">Any European citizen can freely decide to join</strong> whichever collecting society in Europe she/he wants to. However, we won't be able to handle each and every use case of licence from launch on. But we are eager to offer those first that you are longing for most. The detailed list is going to be available at the start of the crowdfunding.
     </p>
     <p i18n:translate="faq-paragraph-i11l2">
-			<strong i18n:translate="faq-strong-i11l2">Even if you are not from Europe, you may join.</strong> Starting with receiving the licence from the German Patent and Trademark Office, C3S can administer your rights for Germany. More countries to follow. 
+			<strong i18n:translate="faq-strong-i11l2">Even if you are not from Europe, you may join.</strong> Starting with receiving the licence from the German Patent and Trademark Office, C3S can administer your rights <strong i18n:translate="faq-strong-i11l3">for Germany</strong>. More countries to follow. 
     </p>
 
     <h3 i18n:translate="faq-headline-rewards" class="deform">Are there other rewards &amp; options going to be available for the crowdfunding besides membership?</h3>
@@ -88,7 +88,10 @@
 
     <h3 i18n:translate="faq-headline-data" class="deform">How secure is my data? Is it possible to request the deletion of my data?</h3>
     <p i18n:translate="faq-paragraph-data1">
-			Of course we will only use the data you provided to notify you of the launch of the upcoming crowdfunding. We will neither pass them on to third parties, nor use them for other purposes, or publish them. They will be stored in Germany by the registered association OpenMusicContest.org as a representative of the C3S foundation initiative, according to the requirements of the Federal Data Protection Act. By sending an email to
+			Of course we will only use the data you provided to notify you of the launch of the upcoming crowdfunding. After the forming of C3S the data will be deleted. Data will also be deleted if you reconsider your decision and you want to revoke your declaration of intent. If you want us to delete your data or revoke your declaration, please send us a written notification.
+    </p>
+    <p i18n:translate="faq-paragraph-data4">
+			We will neither pass them on to third parties, nor use them for other purposes, or publish them. They will be stored in Germany by the registered association OpenMusicContest.org as a representative of the C3S foundation initiative, according to the requirements of the Federal Data Protection Act. By sending an email to
     </p>
     <p>
 			<center><strong>data (at) c3s.cc</strong></center>

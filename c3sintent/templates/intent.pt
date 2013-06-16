@@ -34,23 +34,27 @@
     <ul>
       <li i18n:translate="intent-form-v2-intro-1-step1">Step 1 -- Want to be a part of the action? Make your stand and give us your GO by signing!</li>
       <li i18n:translate="intent-form-v2-intro-1-step2">Step 2 -- 1,000 signatures in -- then C3S is being founded.</li>
-      <li i18n:translate="intent-form-v2-intro-1-step3">Step 3 -- You decide to become a founding member and make history.</li>
+      <li i18n:translate="intent-form-v2-intro-1-step3">Step 3 -- You decide to become a member and make history.</li>
     </ul>
     <h3 i18n:translate="intent-form-v2-headline-2" class="deform">What's going on.</h3>
     <p i18n:translate="intent-form-v2-intro-1">
-      By signing the form you declare your intent to join C3S at its founding. In turn, you are going to receive a note telling you where &amp; when the crowdfunding for launching C3S will take place - even before the public. Then you can purchase shares in C3S, plus exclusive rewards &amp; goodies in extremely limited numbers. To be honest, we are already heavily adrenalised -- 'cause something big is coming! Something that is only available with us. Be one of the first to pick your own reward!
+      By signing the form you declare your intent to join C3S right after its founding. In turn, you are the first to receive a note telling you where &amp; when the crowdfunding for launching C3S will take place -- even before the public. Then you can purchase shares in C3S, plus exclusive rewards &amp; goodies in extremely limited numbers. Something that is only available with us. Be one of the first to pick your own reward!
     </p>
     <h3 i18n:translate="intent-form-v2-headline-3" class="deform">Making History.</h3>
     <p i18n:translate="intent-form-v2-intro-2">
-      When you participate in the crowdfunding you can become a Founding Member of C3S.
+      When you participate in the crowdfunding you can become one of the first members of C3S.
     </p>
     <h3 i18n:translate="intent-form-v2-headline-4" class="deform">No cheap tricks.</h3>
     <p i18n:translate="intent-form-v2-intro-3">
-      Signing the Declaration of Intent ist not binding. You won't become a member by signing the declaration. Neither you will have to pay.
+      Signing the Declaration of Intent is not binding. You won't become a member by signing the declaration. Neither you will have to pay.
     </p>
     <h3 i18n:translate="intent-form-v2-headline-5" class="deform">Yay! Count me in!</h3>
     <p i18n:translate="intent-form-v2-intro-4">
       During the crowdfunding you decide whether you would like to join C3S as a member or supporter. We hope you do. We are looking forward to welcome you on board!
+    </p>
+    <h3 i18n:translate="intent-form-v2-headline-7" class="deform">You want MORE?</h3>
+    <p i18n:translate="intent-form-v2-intro-5">
+      Founding Member of the world's first digital &amp; fair alternative for collecting your royalties -- how's that? If you would like to purchase ten or more shares (10x 50 € = 500 €) <strong i18n:name="email_us_now" i18n:translate="email_us_now">email us *now*</strong>! We want you in as founders. The first 25 are part of the founding convention, the founding picture, the press release -- and an indispensable part of C3S history.
     </p>
     <p i18n:translate="" class="infoIndent">
       <a href="/disclaimer" target="_blank" 
