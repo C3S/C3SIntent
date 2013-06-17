@@ -213,8 +213,19 @@ def success_verify_email(request):
             '[^a-zA-Z0-9]',  # other than these
             '_',  # with an underscore
             namepart)
-        #activities = ""  # XXX TODO FIXME
-        #if
+
+        activities = []
+        if signee.is_composer:
+            activities.append(u'composer')
+        if signee.is_lyricist:
+            activities.append(u'lyricist')
+        if signee.is_producer:
+            activities.append(u'producer')
+        if signee.is_remixer:
+            activities.append(u'remixer')
+        if signee.is_dj:
+            activities.append(u'dj')
+
         appstruct = {
             'firstname': signee.firstname,
             'lastname': signee.lastname,
@@ -223,7 +234,7 @@ def success_verify_email(request):
             'country': signee.country,
             '_LOCALE_': signee.locale,
             'date_of_birth': signee.date_of_birth,
-            'activity': {'composer', },  # XXX TODO FIXME
+            'activity': set(activities),
             'invest_member': signee.invest_member,
             'member_of_colsoc': signee.member_of_colsoc,
             'name_of_colsoc': signee.name_of_colsoc,
@@ -516,9 +527,9 @@ def declare_intent(request):
             appstruct = form.validate(controls)
             if DEBUG:  # pragma: no cover
                 print("the appstruct from the form: %s \n") % appstruct
-                #for thing in appstruct:
-                #    print("the thing: %s") % thing
-                #    print("type: %s") % type(thing)
+                for thing in appstruct:
+                    print("the thing: %s") % thing
+                    print("type: %s") % type(thing)
         except ValidationFailure, e:
             print(e)
             #message.append(
@@ -560,11 +571,11 @@ def declare_intent(request):
             date_of_birth=appstruct['date_of_birth'],
             email_is_confirmed=False,
             email_confirm_code=randomstring,
-            is_composer=(appstruct['activity'].issuperset('composer')),
-            is_lyricist=(appstruct['activity'].issuperset('lyricist')),
-            is_producer=(appstruct['activity'].issuperset('producer')),
-            is_remixer=(appstruct['activity'].issuperset('remixer')),
-            is_dj=(appstruct['activity'].issuperset('dj')),
+            is_composer=('composer' in appstruct['activity']),
+            is_lyricist=('lyricist' in appstruct['activity']),
+            is_producer=('producer' in appstruct['activity']),
+            is_remixer=('remixer' in appstruct['activity']),
+            is_dj=('dj' in appstruct['activity']),
             date_of_submission=datetime.now(),
             invest_member=(appstruct['invest_member'] == u'yes'),
             member_of_colsoc=(appstruct['member_of_colsoc'] == u'yes'),
