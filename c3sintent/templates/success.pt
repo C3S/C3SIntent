@@ -38,15 +38,22 @@
       <a href="${request.route_url('intent')}">please use the form again</a>.
       If all information above is correct...
     </p>
-    <h3 i18n:translate="success-headline-PDF-download" class="deform">Download your form here</h3>
-    <p i18n:translate="success-paragraph-PDF-download">
-      Your PDF is ready, you can download it here:
+    <h3 i18n:translate="success-headline-verify-email" class="deform">Next: verify your email</h3>
+    <p i18n:translate="success-paragraph-verify-email">
+      Click the button to have an email sent to your account.
+      Then, check your email and use the link we send you to get your PDF.
+      This needs to be printed out, signed, and sent back to us.
     </p>
     <p>
+      <form method="POST" action="/check_email">
+        <input type="submit" name="submit" value="send mail" />
+      </form>
+    </p>
+    <!-- p>
       <a href="/C3S_DeclarationOfIntent_${namepart}.pdf">
         C3S_DeclarationOfIntent_${namepart}.pdf
       </a>
-    </p>
+    </p -->
     <p>
       &nbsp;
     </p>

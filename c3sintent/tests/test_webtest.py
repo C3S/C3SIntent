@@ -64,16 +64,16 @@ class FunctionalTests(unittest.TestCase):
 # so let's test the app's obedience to the language requested by the browser
 # i.e. will it respond to http header Accept-Language?
 
-    def test_accept_language_header_da(self):
-        """check the http 'Accept-Language' header obedience: danish
-        load the front page, check danish string exists"""
-        res = self.testapp.reset()  # delete cookie
-        res = self.testapp.get('/', status=200,
-                               headers={
-                'Accept-Language': 'da'})
-        #print(res.body) #  if you want to see the pages source
-        self.failUnless(
-            '<input type="hidden" name="_LOCALE_" value="da"' in res.body)
+    # def test_accept_language_header_da(self):
+    #     """check the http 'Accept-Language' header obedience: danish
+    #     load the front page, check danish string exists"""
+    #     res = self.testapp.reset()  # delete cookie
+    #     res = self.testapp.get('/', status=200,
+    #                            headers={
+    #             'Accept-Language': 'da'})
+    #     #print(res.body) #  if you want to see the pages source
+    #     self.failUnless(
+    #         '<input type="hidden" name="_LOCALE_" value="da"' in res.body)
 
     def test_accept_language_header_de_DE(self):
         """check the http 'Accept-Language' header obedience: german
@@ -301,12 +301,21 @@ class FunctionalTests(unittest.TestCase):
         self.failUnless('yes band' in res2.body)
         self.failUnless('yes.url' in res2.body)
 
-        # try to download the PDF
-        res3 = self.testapp.get(
-            '/C3S_DeclarationOfIntent_ThefirstnameThelastname.pdf',
-            status=200
+#        # try to download the PDF
+#        res3 = self.testapp.get(
+#            '/C3S_DeclarationOfIntent_ThefirstnameThelastname.pdf',
+#            status=200
+#        )
+#        self.failUnless(40000 < len(res3.body) < 60000)  # check pdf size
+
+        # now check for the "mail was sent" confirmation
+        res3 = self.testapp.post(
+            '/check_email',
+            {
+                'submit': True,
+                'value': "send mail"
+            }
         )
-        self.failUnless(40000 < len(res3.body) < 60000)  # check pdf size
 
     def test_success_and_reedit(self):
         """
@@ -319,7 +328,7 @@ class FunctionalTests(unittest.TestCase):
             {
                 'submit': True,
                 'firstname': 'TheFirstNäme',
-                'lastname':'TheLastNäme',
+                'lastname': 'TheLastNäme',
                 'date_of_birth': '1987-06-05',
                 'city': 'Devilstöwn',
                 'email': 'email@example.com',
@@ -357,3 +366,46 @@ class FunctionalTests(unittest.TestCase):
         self.failUnless('TheFirstNäme' in res3.body)
         form = res3.form
         self.failUnless(form['firstname'].value == u'TheFirstNäme')
+
+    def test_email_confirmation(self):
+        """
+        test email confirmation
+        """
+        res = self.testapp.reset()
+        res = self.testapp.get('/verify/foo@shri.de/ABCDEFGHIJ', status=200)
+        #print(res.body)
+        self.failUnless("Success. load your PDF!" in res.body)
+        res2 = self.testapp.get(
+            '/C3S_DeclarationOfIntent_ThefirstnameThelastname.pdf',
+            status=200
+        )
+        self.failUnless(40000 < len(res2.body) < 60000)  # check pdf size
+
+    def test_email_confirmation_wrong_mail(self):
+        """
+        test email confirmation with a wrong email
+        """
+        res = self.testapp.reset()
+        res = self.testapp.get(
+            '/verify/NOTEXISTS@shri.de/ABCDEFGHIJ', status=200)
+        #print(res.body)
+        self.failUnless("something went wrong." in res.body)
+
+    def test_email_confirmation_wrong_code(self):
+        """
+        test email confirmation with a wrong code
+        """
+        res = self.testapp.reset()
+        res = self.testapp.get('/verify/foo@shri.de/WRONGCODE', status=200)
+        #print(res.body)
+        self.failUnless("Not found. check URL." in res.body)
+
+    def test_success_check_email(self):
+        """
+        test "check email" success page with wrong data
+        """
+        res = self.testapp.reset()
+        res = self.testapp.get('/check_email', status=302)
+
+        res2 = res.follow()
+        self.failUnless("After submitting the form below" in res2.body)

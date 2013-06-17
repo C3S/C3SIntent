@@ -11,7 +11,10 @@ def _initTestingDB():
     """
     from sqlalchemy import create_engine
     from c3sintent.models import initialize_sql
-    session = initialize_sql(create_engine('sqlite://'))
+    try:
+        session = initialize_sql(create_engine('sqlite:///:memory:'))
+    except:
+        session = DBSession
     return session
 
 
@@ -25,7 +28,10 @@ class TestUtilities(unittest.TestCase):
         """
         self.config = testing.setUp()
         self.config.include('pyramid_mailer.testing')
-        DBSession.remove()
+        try:
+            DBSession.remove()
+        except:
+            pass
         self.session = _initTestingDB()
 
     def tearDown(self):

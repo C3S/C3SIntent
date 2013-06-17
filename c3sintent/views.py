@@ -3,7 +3,12 @@
 from c3sintent.utils import (
     generate_pdf,
     accountant_mail,
-    )
+)
+from c3sintent.models import (
+    IntentSignee,
+    DBSession,
+)
+
 from pkg_resources import resource_filename
 import colander
 import deform
@@ -13,7 +18,7 @@ from pyramid.i18n import (
     #TranslationStringFactory,
     get_localizer,
     get_locale_name,
-    )
+)
 from pyramid.view import view_config
 from pyramid.threadlocal import get_current_request
 from pyramid_mailer import get_mailer
@@ -40,9 +45,9 @@ zpt_renderer = deform.ZPTRendererFactory(
     [
         my_template_dir,
         deform_template_dir,
-        ],
+    ],
     translator=translator,
-    )
+)
 # the zpt_renderer above is referred to within the demo.ini file by dotted name
 
 DEBUG = False
@@ -118,9 +123,127 @@ def show_success_pdf(request):
     #check if user has used form or 'guessed' this URL
     if ('appstruct' in request.session):
         # we do have valid info from the form in the session
+        #print("-- valid session with data found")
+        # send mail to accountants // prepare a mailer
+        mailer = get_mailer(request)
+        # prepare mail
+        appstruct = request.session['appstruct']
+        the_mail = accountant_mail(appstruct)
+        mailer.send(the_mail)
+
         return generate_pdf(request.session['appstruct'])
     # 'else': send user to the form
+    #print("-- no valid session with data found")
     return HTTPFound(location=request.route_url('intent'))
+
+
+@view_config(
+    renderer='templates/check-mail.pt',
+    route_name='success_check_email')
+def success_check_email(request):
+    """
+    This view just returns a note to go check mail
+    """
+    #check if user has used form or 'guessed' this URL
+    if ('appstruct' in request.session):
+        # we do have valid info from the form in the session
+        appstruct = request.session['appstruct']
+        from pyramid_mailer.message import Message
+        mailer = get_mailer(request)
+        the_mail = Message(
+            subject=_("C3S: confirm your email address and load your PDF"),
+            sender="noreply@c3s.cc",
+            recipients=[appstruct['email']],
+            body="""hello %s %s,
+
+please use this link to verify your email address
+and download your personal Declaration of Intent PDF:
+
+https://yes.c3s.cc/verify/%s/%s
+""" % (appstruct['firstname'],
+       appstruct['lastname'],
+       appstruct['email'],
+       appstruct['email_confirm_code'])
+        )
+        mailer.send(the_mail)
+        return {
+            'firstname': appstruct['firstname'],
+            'lastname': appstruct['lastname'],
+        }
+    # 'else': send user to the form
+    return HTTPFound(location=request.route_url('intent'))
+
+
+@view_config(
+    renderer='templates/verify-mail.pt',
+    route_name='success_verify_email')
+def success_verify_email(request):
+    """
+    This view is called via links sent in mails to verify mail addresses.
+    It extracts both email and verification code from the URL
+    and checks if there is a match in the database.
+    """
+    #dbsession = DBSession()
+    # collect data from the URL/matchdict
+    user_email = request.matchdict['email']
+    confirm_code = request.matchdict['code']
+
+    # get matching dataset from DB
+    signee = IntentSignee.get_by_code(confirm_code)  # returns a signee or None
+    # check if info from DB makes sense
+    # -signee
+    from types import NoneType
+    if isinstance(signee, NoneType):
+        # signee not found: FAIL!
+        #print("a matching entry for this code was not found.")
+        return {
+            #'firstname': '',
+            #'lastname': '',
+            'namepart': '',
+            'result_msg': "Not found. check URL."
+        }
+    elif (signee.email == user_email):
+        #print("-- found signee, code matches. COOL!")
+        # set the email_is_confirmed flag in the DB for this signee
+        signee.email_is_confirmed = True
+        #dbsession.flush()
+        namepart = signee.firstname + signee.lastname
+        import re
+        PdfFileNamePart = re.sub(  # replace characters
+            '[^a-zA-Z0-9]',  # other than these
+            '_',  # with an underscore
+            namepart)
+        #activities = ""  # XXX TODO FIXME
+        #if
+        appstruct = {
+            'firstname': signee.firstname,
+            'lastname': signee.lastname,
+            'email': signee.email,
+            'city': signee.city,
+            'country': signee.country,
+            '_LOCALE_': signee.locale,
+            'date_of_birth': signee.date_of_birth,
+            'activity': {'composer', },  # XXX TODO FIXME
+            'invest_member': signee.invest_member,
+            'member_of_colsoc': signee.member_of_colsoc,
+            'name_of_colsoc': signee.name_of_colsoc,
+            'opt_band': signee.opt_band,
+            'opt_URL': signee.opt_URL,
+        }
+        request.session['appstruct'] = appstruct
+        return {
+            'firstname': signee.firstname,
+            'lastname': signee.lastname,
+            'namepart': PdfFileNamePart,
+            'result_msg': "Success. load your PDF!"
+        }
+    # else: code did not match OR SOMETHING...
+    return {
+        'firstname': '',
+        'lastname': '',
+        'namepart': '',
+        'result_msg': "something went wrong."
+    }
 
 
 @view_config(renderer='templates/intent.pt',
@@ -242,7 +365,6 @@ def declare_intent(request):
         """
         type_of_creator = (('composer', _(u'composer')),
                            ('lyricist', _(u'lyricist')),
-    #                      ('musician', _(u'musician')),
                            ('music producer', _(u'music producer')),
                            ('remixer', _(u'remixer')),
                            ('dj', _(u'DJ')))
@@ -268,19 +390,22 @@ def declare_intent(request):
      #       widget=deform.widget.RadioChoiceWidget(values=yes_no))
         member_of_colsoc = colander.SchemaNode(
             colander.String(),
-            title=_(u'Currently, I am a member of another collecting society.'),
+            title=_(
+                u'Currently, I am a member of another collecting society.'),
             validator=colander.OneOf([x[0] for x in yes_no]),
             widget=deform.widget.RadioChoiceWidget(values=yes_no),
             )
         ## TODO: inColSocName if member_of_colsoc = yes
-        name_of_colsoc = colander.SchemaNode(colander.String(),
-                                      title=_(u'If so, which one?'),
-                                      missing=unicode(''))
+        name_of_colsoc = colander.SchemaNode(
+            colander.String(),
+            title=_(u'If so, which one?'),
+            missing=unicode(''))
         invest_member = colander.SchemaNode(
             colander.String(),
-            title=_(u'I am considering to join C3S as a supporting member only. '
-                    'This option is also available to members of other collecting '
-                    'societies without quitting those.'),
+            title=_(
+                u'I am considering to join C3S as a supporting member only. '
+                'This option is also available to members of other collecting '
+                'societies without quitting those.'),
             validator=colander.OneOf([x[0] for x in yes_no]),
             widget=deform.widget.RadioChoiceWidget(values=yes_no))
         firstname = colander.SchemaNode(
@@ -404,11 +529,60 @@ def declare_intent(request):
                 allow_duplicate=False)
             return{'form': e.render()}
 
+        def make_random_string():
+            """
+            used as email confirmation code
+            """
+            import random
+            import string
+            return ''.join(
+                random.choice(
+                    string.ascii_uppercase + string.digits
+                ) for x in range(10))
+
+        # make confirmation code and
+        randomstring = make_random_string()
+        # check if confirmation code is already used
+        while (IntentSignee.check_for_existing_confirm_code(randomstring)):
+            # create a new one, if the new one already exists in the database
+            randomstring = make_random_string()  # pragma: no cover
+
+        from datetime import datetime
+        from sqlalchemy.exc import InvalidRequestError
+        # to store the data in the DB, an objet is created
+        signee = IntentSignee(
+            firstname=appstruct['firstname'],
+            lastname=appstruct['lastname'],
+            email=appstruct['email'],
+            city=appstruct['city'],
+            country=appstruct['country'],
+            locale=appstruct['_LOCALE_'],
+            date_of_birth=appstruct['date_of_birth'],
+            email_is_confirmed=False,
+            email_confirm_code=randomstring,
+            is_composer=(appstruct['activity'].issuperset('composer')),
+            is_lyricist=(appstruct['activity'].issuperset('lyricist')),
+            is_producer=(appstruct['activity'].issuperset('producer')),
+            is_remixer=(appstruct['activity'].issuperset('remixer')),
+            is_dj=(appstruct['activity'].issuperset('dj')),
+            date_of_submission=datetime.now(),
+            invest_member=(appstruct['invest_member'] == u'yes'),
+            member_of_colsoc=(appstruct['member_of_colsoc'] == u'yes'),
+            name_of_colsoc=appstruct['name_of_colsoc'],
+            opt_band=appstruct['opt_band'],
+            opt_URL=appstruct['opt_URL'],
+        )
+        dbsession = DBSession()
+        try:
+            dbsession.add(signee)
+            appstruct['email_confirm_code'] = randomstring
+        except InvalidRequestError, e:  # pragma: no cover
+            print("InvalidRequestError! %s") % e
         # send mail to accountants // prepare a mailer
-        mailer = get_mailer(request)
+        #mailer = get_mailer(request)
         # prepare mail
-        the_mail = accountant_mail(appstruct)
-        mailer.send(the_mail)
+        #the_mail = accountant_mail(appstruct)
+        #mailer.send(the_mail)
         #log.info("NOT sending mail...")
 
         #return generate_pdf(appstruct)  # would just return a PDF

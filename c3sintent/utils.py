@@ -4,9 +4,10 @@ import tempfile
 import subprocess
 from fdfgen import forge_fdf
 from c3sintent.gnupg_encrypt import encrypt_with_gnupg
-from pyramid_mailer.message import Message
-from pyramid_mailer.message import Attachment
-
+from pyramid_mailer.message import (
+    Message,
+    Attachment,
+)
 DEBUG = False
 
 
@@ -191,7 +192,7 @@ def make_mail_body(appstruct):
     the_activities = ''
     for x in appstruct['activity']:
         the_activities += x + ', '
-
+    appstruct['noticed_dataProtection'] = "yes"
     # # test the types
     # for thing in [
     #     appstruct['firstname'],
@@ -268,17 +269,18 @@ def accountant_mail(appstruct):
         body=encrypted
     )
     #print("accountant_mail: csv_payload: \n%s") % generate_csv(appstruct)
-    #print("accountant_mail: type of csv_payload: \n%s") % type(generate_csv(appstruct))
+    #print(
+    #    "accountant_mail: type of csv_payload: \n%s"
+    #) % type(generate_csv(appstruct))
     csv_payload_encd = encrypt_with_gnupg(generate_csv(appstruct))
     #print("accountant_mail: csv_payload_encd: \n%s") % csv_payload_encd
-    #print("accountant_mail: type of csv_payload_encd: \n%s") % type(csv_payload_encd)
+    #print(
+    #    "accountant_mail: type of csv_payload_encd: \n%s"
+    #) % type(csv_payload_encd)
 
     attachment = Attachment(
         "DOI.csv.gpg", "application/gpg-encryption",
         csv_payload_encd)
-
-        #(generate_csv(appstruct)))
-    # TODO: make attachment contents a .csv with the data supplied.
     message.attach(attachment)
 
     return message
