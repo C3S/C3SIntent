@@ -39,7 +39,7 @@
   </div>
   <div id="footer" style="height:auto;padding-top:10px">
     <div class="footer">&copy; Copyright 2013, OpenMusicContest.org e.V. &nbsp; &nbsp;
-      <a target="_blank" style="text-decoration:none; color:black; font-size:66%"
+      <!-- <a target="_blank" style="text-decoration:none; color:black; font-size:66%"
 	 href="https://www.transifex.com/projects/p/C3Sintent/resource/POT/"
 	 title="Want more langages? Help us translate on Transifex.com">
 	<img border="0" alt="image shows languages and percentages translated"
@@ -48,7 +48,7 @@
 	<img border="0" alt="transifex.com logo"
 	     src="static/transifex-logo.png"
 	     style="vertical-align: middle;" />
-      </a>
+      </a> -->
     </div>
   </div>
 	<tal:block metal:define-slot="deform-load"></tal:block>
