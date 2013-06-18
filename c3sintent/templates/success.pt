@@ -14,7 +14,9 @@
   <tal:block metal:fill-slot="bottom">
     <h3 i18n:translate="success-headline-thanks" class="deform">That worked, ${firstname} ${lastname}!</h3>
     <p i18n:translate="success-paragraph-thanks">
-      What happens next: You download the form with your data, print out the second page, sign it and send it back to us.
+      What happens next: You need to check the information below to be correct,
+      receive an email to verify your address, download the form with your data,
+      print out the form, sign it and send it back to us.
     </p>
     <h3 i18n:translate="success-headline-data-received">Your data we received</h3>
     <p i18n:translate="success-paragraph-data-received">
@@ -49,11 +51,6 @@
         <input type="submit" name="submit" value="send mail" />
       </form>
     </p>
-    <!-- p>
-      <a href="/C3S_DeclarationOfIntent_${namepart}.pdf">
-        C3S_DeclarationOfIntent_${namepart}.pdf
-      </a>
-    </p -->
     <p>
       &nbsp;
     </p>

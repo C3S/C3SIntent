@@ -87,28 +87,22 @@ def show_faq(request):
              route_name='success')
 def show_success(request):
     """
-    This view shows a success page
+    This view shows a success page with the data gathered
+    and a link back to the form in case some data is wrong/needs correction
     """
     #check if user has used form or 'guessed' this URL
     if ('appstruct' in request.session):
         # we do have valid info from the form in the session
         appstruct = request.session['appstruct']
+        print("show_success: locale: %s") % appstruct['_LOCALE_']
         # gather activities for easier display in template
         activities = ''
         for act in appstruct['activity']:
             #print act
             activities += act + ', '
-        # prepare namepart of pdf download URL
-        namepart = appstruct['firstname'].title() + appstruct['lastname'].title()
-        import re
-        PdfFileNamePart = re.sub(  # replace characters
-            '[^a-zA-Z0-9]',  # other than these
-            '_',  # with an underscore
-            namepart)
         return {
             'firstname': appstruct['firstname'],
             'lastname': appstruct['lastname'],
-            'namepart': PdfFileNamePart,
             'activities': activities
         }
     # 'else': send user to the form
@@ -150,6 +144,7 @@ def success_check_email(request):
         appstruct = request.session['appstruct']
         from pyramid_mailer.message import Message
         mailer = get_mailer(request)
+        # XXX TODO: check for locale, choose language for body text
         the_mail = Message(
             subject=_("C3S: confirm your email address and load your PDF"),
             sender="noreply@c3s.cc",
@@ -246,7 +241,7 @@ def success_verify_email(request):
             'firstname': signee.firstname,
             'lastname': signee.lastname,
             'namepart': PdfFileNamePart,
-            'result_msg': "Success. load your PDF!"
+            'result_msg': _("Success. Load your PDF!")
         }
     # else: code did not match OR SOMETHING...
     return {

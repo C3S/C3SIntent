@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: C3Sintent 0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2013-06-01 21:56+0200\n"
+"POT-Creation-Date: 2013-06-18 10:11+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,233 +17,260 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.6\n"
 
-#: c3sintent/views.py:186
+#: c3sintent/views.py:149
+msgid "C3S: confirm your email address and load your PDF"
+msgstr ""
+
+#: c3sintent/views.py:244
+msgid "Success. Load your PDF!"
+msgstr ""
+
+#: c3sintent/views.py:324
 msgid "Austria"
 msgstr ""
 
-#: c3sintent/views.py:187
+#: c3sintent/views.py:325
 msgid "Belgium"
 msgstr ""
 
-#: c3sintent/views.py:188
+#: c3sintent/views.py:326
 msgid "Bulgaria"
 msgstr ""
 
-#: c3sintent/views.py:189
+#: c3sintent/views.py:327
 msgid "Switzerland"
 msgstr ""
 
-#: c3sintent/views.py:190
+#: c3sintent/views.py:328
 msgid "Czech Republic"
 msgstr ""
 
-#: c3sintent/views.py:191
+#: c3sintent/views.py:329
 msgid "Germany"
 msgstr ""
 
-#: c3sintent/views.py:192
+#: c3sintent/views.py:330
 msgid "Denmark"
 msgstr ""
 
-#: c3sintent/views.py:193
+#: c3sintent/views.py:331
 msgid "Spain"
 msgstr ""
 
-#: c3sintent/views.py:194
+#: c3sintent/views.py:332
 msgid "Estonia"
 msgstr ""
 
-#: c3sintent/views.py:195
+#: c3sintent/views.py:333
 msgid "Finland"
 msgstr ""
 
-#: c3sintent/views.py:196
+#: c3sintent/views.py:334
 msgid "France"
 msgstr ""
 
-#: c3sintent/views.py:197
+#: c3sintent/views.py:335
 msgid "United Kingdom"
 msgstr ""
 
-#: c3sintent/views.py:198
+#: c3sintent/views.py:336
 msgid "Greece"
 msgstr ""
 
-#: c3sintent/views.py:199
+#: c3sintent/views.py:337
 msgid "Hungary"
 msgstr ""
 
-#: c3sintent/views.py:200
+#: c3sintent/views.py:338
 msgid "Croatia"
 msgstr ""
 
-#: c3sintent/views.py:201
+#: c3sintent/views.py:339
 msgid "Israel"
 msgstr ""
 
-#: c3sintent/views.py:202
+#: c3sintent/views.py:340
 msgid "Ireland"
 msgstr ""
 
-#: c3sintent/views.py:203
+#: c3sintent/views.py:341
 msgid "Italy"
 msgstr ""
 
-#: c3sintent/views.py:204
+#: c3sintent/views.py:342
 msgid "Lithuania"
 msgstr ""
 
-#: c3sintent/views.py:205
+#: c3sintent/views.py:343
 msgid "Latvia"
 msgstr ""
 
-#: c3sintent/views.py:206
+#: c3sintent/views.py:344
 msgid "Luxembourg"
 msgstr ""
 
-#: c3sintent/views.py:207
+#: c3sintent/views.py:345
 msgid "Malta"
 msgstr ""
 
-#: c3sintent/views.py:208
+#: c3sintent/views.py:346
 msgid "Netherlands"
 msgstr ""
 
-#: c3sintent/views.py:209
+#: c3sintent/views.py:347
 msgid "Poland"
 msgstr ""
 
-#: c3sintent/views.py:210
+#: c3sintent/views.py:348
 msgid "Portugal"
 msgstr ""
 
-#: c3sintent/views.py:211
+#: c3sintent/views.py:349
 msgid "Slovakia"
 msgstr ""
 
-#: c3sintent/views.py:212
+#: c3sintent/views.py:350
 msgid "Slovenia"
 msgstr ""
 
-#: c3sintent/views.py:213
+#: c3sintent/views.py:351
 msgid "Sweden"
 msgstr ""
 
-#: c3sintent/views.py:214
+#: c3sintent/views.py:352
 msgid "other"
 msgstr ""
 
-#: c3sintent/views.py:234
+#: c3sintent/views.py:372
 msgid "composer"
 msgstr ""
 
-#: c3sintent/views.py:235
+#: c3sintent/views.py:373
 msgid "lyricist"
 msgstr ""
 
-#: c3sintent/views.py:237
+#: c3sintent/views.py:374
 msgid "music producer"
 msgstr ""
 
-#: c3sintent/views.py:238
+#: c3sintent/views.py:375
 msgid "remixer"
 msgstr ""
 
-#: c3sintent/views.py:239
+#: c3sintent/views.py:376
 msgid "DJ"
 msgstr ""
 
-#: c3sintent/views.py:243
+#: c3sintent/views.py:380
 msgid ""
 "I'm musically involved in creating at least three songs, and I'm considering "
 "to ask C3S to administer the rights  to some of my songs. I am active as a "
 "(multiple selection possible)"
 msgstr ""
 
-#: c3sintent/views.py:251 c3sintent/views.py:360
+#: c3sintent/views.py:388 c3sintent/views.py:500
 msgid "Yes"
 msgstr ""
 
-#: c3sintent/views.py:252
+#: c3sintent/views.py:389
 msgid "No"
 msgstr ""
 
-#: c3sintent/views.py:262
+#: c3sintent/views.py:399
 msgid "Currently, I am a member of another collecting society."
 msgstr ""
 
-#: c3sintent/views.py:268
+#: c3sintent/views.py:407
 msgid "If so, which one?"
 msgstr ""
 
-#: c3sintent/views.py:272
+#: c3sintent/views.py:411
 msgid ""
 "I am considering to join C3S as a supporting member only. This option is also"
 " available to members of other collecting societies without quitting those."
 msgstr ""
 
-#: c3sintent/views.py:279
+#: c3sintent/views.py:419
 msgid "(Real) First Name"
 msgstr ""
 
-#: c3sintent/views.py:282
+#: c3sintent/views.py:422
 msgid "(Real) Last Name"
 msgstr ""
 
-#: c3sintent/views.py:285
+#: c3sintent/views.py:425
 msgid "Email"
 msgstr ""
 
-#: c3sintent/views.py:296
+#: c3sintent/views.py:436
 msgid "City"
 msgstr ""
 
-#: c3sintent/views.py:303
+#: c3sintent/views.py:443
 msgid "Country"
 msgstr ""
 
-#: c3sintent/views.py:313
+#: c3sintent/views.py:453
 msgid "Date of Birth"
 msgstr ""
 
-#: c3sintent/views.py:320
+#: c3sintent/views.py:460
 msgid "${val} is earlier than earliest date ${min}"
 msgstr ""
 
-#: c3sintent/views.py:321
+#: c3sintent/views.py:461
 msgid "${val} is later than latest date ${max}"
 msgstr ""
 
-#: c3sintent/views.py:327
+#: c3sintent/views.py:467
 msgid "optional: Band/Artist name"
 msgstr ""
 
-#: c3sintent/views.py:332
+#: c3sintent/views.py:472
 msgid "optional: Homepage"
 msgstr ""
 
-#: c3sintent/views.py:354
+#: c3sintent/views.py:494
 msgid ""
 "I have taken note of the Data Protection Declaration which is part of this "
 "text and can be read separately at http://www.c3s.cc/disclaimer-en.html and "
 "agree with it. I know that I may revoke this consent at any time."
 msgstr ""
 
-#: c3sintent/views.py:371
+#: c3sintent/views.py:511
 msgid "Submit"
 msgstr ""
 
-#: c3sintent/views.py:372
+#: c3sintent/views.py:512
 msgid "Reset"
 msgstr ""
 
-#: c3sintent/views.py:389
+#: c3sintent/views.py:532
 msgid "Please note: There were errors, please check the form below."
 msgstr ""
 
 #. Default: Declaration of Intent to Join Cultural Commons Collecting Society (C3S)
 #: c3sintent/templates/base.pt:7 c3sintent/templates/intent.pt:14
 msgid "intent-form-title"
+msgstr ""
+
+#. Default: C3S Declaration of Intent: Check your email
+#. Default: C3S Declaration of Intent: Success
+#. Default: C3S Declaration of Intent: Email Verification
+#: c3sintent/templates/check-mail.pt:12 c3sintent/templates/success.pt:12
+#: c3sintent/templates/verify-mail.pt:12
+msgid "success-title"
+msgstr ""
+
+#. Default: Email was sent, ${firstname} ${lastname}!
+#: c3sintent/templates/check-mail.pt:15
+msgid "success-headline-check-email"
+msgstr ""
+
+#. Default: You will receive an email from noreply@c3s.cc with a link. Please check
+#. your email!
+#: c3sintent/templates/check-mail.pt:16
+msgid "success-paragraph-check-email"
 msgstr ""
 
 #. Default: Data Protection Declaration
@@ -331,103 +358,96 @@ msgstr ""
 msgid "faq-headline-howmany"
 msgstr ""
 
-#. Default: With about 600 people purchasing shares at the crowdfunding the launch
-#. capital is safe.
-#: c3sintent/templates/faq.pt:32
+#. Default: A number of 1,000 people willing to join C3S will make a safe launch.
+#: c3sintent/templates/faq.pt:31
 msgid "faq-strong-howmany1"
 msgstr ""
 
-#. Default: We are aiming at a number of 1,000 people willing to join C3S. <dynamic
-#. element> The sooner we meet this number, the sooner we launch.
+#. Default: <dynamic element> The sooner we meet this number, the sooner we launch.
+#. But our aim is to add far more members. More than that, we are eager to have
+#. jobs on offer for developers.
 #: c3sintent/templates/faq.pt:30
 msgid "faq-paragraph-howmany1"
 msgstr ""
 
 #. Default: But this time, it is about 3,000 members who are required.
-#: c3sintent/templates/faq.pt:43
+#: c3sintent/templates/faq.pt:38
 msgid "faq-strong-howmany2"
 msgstr ""
 
-#. Default: Even better: The more of you are signing, the sooner we meet the
-#. requirements of German Patent and Branding Office (DPMA) which are even more
-#. strict. After legally forming C3S, DPMA is going to grant the licence to work as
-#. a collecting society. <dynamic element>
-#: c3sintent/templates/faq.pt:37
+#. Default: The more of you are signing, the sooner we meet the requirements of
+#. German Patent and Branding Office (DPMA) which are even more strict. Only after
+#. legally forming C3S, DPMA can grant the licence to work as a collecting society.
+#. <dynamic element>
+#: c3sintent/templates/faq.pt:36
 msgid "faq-paragraph-howmany2"
 msgstr ""
 
 #. Default: Who may sign the declaration?
-#: c3sintent/templates/faq.pt:47
+#: c3sintent/templates/faq.pt:42
 msgid "faq-headline-whysign"
 msgstr ""
 
 #. Default: Anyone who likes to can become a member of C3S!
-#: c3sintent/templates/faq.pt:49
+#: c3sintent/templates/faq.pt:44
 msgid "faq-strong-whysign1"
 msgstr ""
 
 #. Default: <dynamic element> You may be musically active, or not. Supporting C3S
 #. is available to all – even to members of other collecting societies.
-#: c3sintent/templates/faq.pt:48
+#: c3sintent/templates/faq.pt:43
 msgid "faq-paragraph-whysign1"
 msgstr ""
 
 #. Default: Basic requirement: You have to seriously consider joining C3S.
-#: c3sintent/templates/faq.pt:55
+#: c3sintent/templates/faq.pt:50
 msgid "faq-paragraph-whysign2"
 msgstr ""
 
 #. Default: How to join?
-#: c3sintent/templates/faq.pt:59
+#: c3sintent/templates/faq.pt:54
 msgid "faq-headline-join"
 msgstr ""
 
-#. Default: a musician who writes, arranges or remixes songs
-#: c3sintent/templates/faq.pt:62
+#. Default: a musician who writes, arranges or remixes songs can purchase shares in
+#. C3S
+#: c3sintent/templates/faq.pt:57
 msgid "faq-strong-join1"
 msgstr ""
 
-#. Default: a) Basically, as <dynamic element> (= creator / User Member) you can
-#. purchase shares in C3S during the crowdfunding. Done that, at the founding
-#. convention you may become a member. Each member participates directly in the
-#. registered cooperative. One share comes at a cost of 50 €. More than that, when
-#. leaving C3S each member will be returned the full value of shares he or she
-#. initially paid.
-#: c3sintent/templates/faq.pt:60
+#. Default: a) Basically, as <dynamic element> during the crowdfunding and become a
+#. member. Each member participates directly in the registered cooperative. One
+#. share comes at a cost of 50 €. Upon leaving C3S each member will be returned the
+#. full value of shares he or she initially paid.
+#: c3sintent/templates/faq.pt:55
 msgid "faq-paragraph-join1"
 msgstr ""
 
-#. Default: other individuals and organisations can join as supporters of C3S
-#: c3sintent/templates/faq.pt:71
+#. Default: supporter of C3S
+#: c3sintent/templates/faq.pt:64
 msgid "faq-strong-join2"
 msgstr ""
 
-#. Default: b) Any <dynamic element> (= Non-User Member) and be a valuable help to
-#. make the vision come true. As with musicians you may purchase one or more
+#. Default: b) Anyone else can join as a <dynamic element> and be a valuable help
+#. to make the vision come true. As with musicians you may purchase one or more
 #. shares, but voting is the privilege of musicians.
-#: c3sintent/templates/faq.pt:69
+#: c3sintent/templates/faq.pt:62
 msgid "faq-paragraph-join2"
 msgstr ""
 
-#. Default: founding member
-#: c3sintent/templates/faq.pt:76
-msgid "faq-strong-join3"
-msgstr ""
-
-#. Default: Anyone can become a <dynamic element> if he takes part in the
-#. crowdfunding. When the crowdfunding launches, the cooperative's statutes will be
+#. Default: When the crowdfunding launches, the cooperative's statutes will be
 #. available for download.
-#: c3sintent/templates/faq.pt:75
+#: c3sintent/templates/faq.pt:69
 msgid "faq-paragraph-join3"
 msgstr ""
 
 #. Default: No German, no European citizen? Don't fear – join anyway!
-#: c3sintent/templates/faq.pt:81
+#: c3sintent/templates/faq.pt:73
 msgid "faq-headline-i11l"
 msgstr ""
 
 #. Default: Any European citizen can freely decide to join
-#: c3sintent/templates/faq.pt:83
+#: c3sintent/templates/faq.pt:75
 msgid "faq-strong-i11l1"
 msgstr ""
 
@@ -435,57 +455,62 @@ msgstr ""
 #. to. However, we won't be able to handle each and every use case of licence from
 #. launch on. But we are eager to offer those first that you are longing for most.
 #. The detailed list is going to be available at the start of the crowdfunding.
-#: c3sintent/templates/faq.pt:82
+#: c3sintent/templates/faq.pt:74
 msgid "faq-paragraph-i11l1"
 msgstr ""
 
 #. Default: Even if you are not from Europe, you may join.
-#: c3sintent/templates/faq.pt:90
+#: c3sintent/templates/faq.pt:84
 msgid "faq-strong-i11l2"
 msgstr ""
 
+#. Default: for Germany.
+#: c3sintent/templates/faq.pt:88
+msgid "faq-strong-i11l3"
+msgstr ""
+
 #. Default: <dynamic element> Starting with receiving the licence from the German
-#. Patent and Trademark Office, C3S can administer your rights for Germany. More
-#. countries to follow.
-#: c3sintent/templates/faq.pt:89
+#. Patent and Trademark Office, C3S can administer your rights <dynamic element>
+#. More countries to follow.
+#: c3sintent/templates/faq.pt:83
 msgid "faq-paragraph-i11l2"
 msgstr ""
 
 #. Default: Are there other rewards &amp; options going to be available for the
 #. crowdfunding besides membership?
-#: c3sintent/templates/faq.pt:95
+#: c3sintent/templates/faq.pt:94
 msgid "faq-headline-rewards"
 msgstr ""
 
 #. Default: there will be more than the glory of the Hall of Fame.
-#: c3sintent/templates/faq.pt:101
+#: c3sintent/templates/faq.pt:100
 msgid "faq-strong-rewards"
 msgstr ""
 
 #. Default: Of course. Only those who sign the Declaration of Intent will receive
 #. the link to the crowdfunding in advance. And certainly, <dynamic element> More
 #. than an awesome T-Shirt. You know it first. Feeling tempted?
-#: c3sintent/templates/faq.pt:98
+#: c3sintent/templates/faq.pt:97
 msgid "faq-paragraph-rewards"
 msgstr ""
 
 #. Default: What are the advantages of C3S?
-#: c3sintent/templates/faq.pt:105
+#: c3sintent/templates/faq.pt:106
 msgid "faq-headline-benefits"
 msgstr ""
 
 #. Default: For the first time ever, with C3S a collecting society will offer:
-#: c3sintent/templates/faq.pt:106
+#: c3sintent/templates/faq.pt:107
 msgid "faq-paragraph-benefits"
 msgstr ""
 
 #. Default: Entirely individual choice of licences:
-#: c3sintent/templates/faq.pt:111
+#: c3sintent/templates/faq.pt:112
 msgid "faq-strong-choose-licence1"
 msgstr ""
 
 #. Default: It's your song, and you're in control.
-#: c3sintent/templates/faq.pt:115
+#: c3sintent/templates/faq.pt:118
 msgid "faq-strong-choose-licence2"
 msgstr ""
 
@@ -493,77 +518,85 @@ msgstr ""
 #. licenced for a fee or at no cost (e.g. for marketing or beneficiary use). You
 #. can choose between „all rights reserved“ or Creative Commons - separately per
 #. song. <dynamic element>
-#: c3sintent/templates/faq.pt:110
+#: c3sintent/templates/faq.pt:111
 msgid "faq-benefits-li-choose-licence"
 msgstr ""
 
 #. Default: for which of your songs
-#: c3sintent/templates/faq.pt:118
+#: c3sintent/templates/faq.pt:123
 msgid "faq-strong-choose-works"
 msgstr ""
 
 #. Default: It's you who decides <dynamic element> we are going to administer the
 #. rights.
-#: c3sintent/templates/faq.pt:117
+#: c3sintent/templates/faq.pt:122
 msgid "faq-benefits-li-choose-works"
 msgstr ""
 
 #. Default: equal voting rights for all User Members.
-#: c3sintent/templates/faq.pt:123
+#: c3sintent/templates/faq.pt:128
 msgid "faq-strong-cooperative"
 msgstr ""
 
 #. Default: C3S is going to be a registered cooperative, with <dynamic element>
-#: c3sintent/templates/faq.pt:121
+#: c3sintent/templates/faq.pt:126
 msgid "faq-benefits-li-cooperative"
 msgstr ""
 
 #. Default: most exact billing and distribution methods
-#: c3sintent/templates/faq.pt:127
+#: c3sintent/templates/faq.pt:132
 msgid "faq-strong-payperplay"
 msgstr ""
 
 #. Default: Pay-per-Play: We are aiming at the <dynamic element> with estimates
 #. being only used for unspecified data.
-#: c3sintent/templates/faq.pt:125
+#: c3sintent/templates/faq.pt:130
 msgid "faq-benefits-li-payperplay"
 msgstr ""
 
 #. Default: social media, donations &amp; micro payment.
-#: c3sintent/templates/faq.pt:131
+#: c3sintent/templates/faq.pt:136
 msgid "faq-strong-micropayment"
 msgstr ""
 
 #. Default: Integration of <dynamic element>
-#: c3sintent/templates/faq.pt:130
+#: c3sintent/templates/faq.pt:135
 msgid "faq-benefits-li-micropayment"
 msgstr ""
 
 #. Default: first full-fledged and cross-European collecting society
-#: c3sintent/templates/faq.pt:135
+#: c3sintent/templates/faq.pt:140
 msgid "faq-strong-european"
 msgstr ""
 
 #. Default: Legal form of a European Cooperative Society (SCE), to become the
 #. <dynamic element> in the long term.
-#: c3sintent/templates/faq.pt:133
+#: c3sintent/templates/faq.pt:138
 msgid "faq-benefits-li-european"
 msgstr ""
 
 #. Default: How secure is my data? Is it possible to request the deletion of my
 #. data?
-#: c3sintent/templates/faq.pt:140
+#: c3sintent/templates/faq.pt:145
 msgid "faq-headline-data"
 msgstr ""
 
 #. Default: Of course we will only use the data you provided to notify you of the
-#. launch of the upcoming crowdfunding. We will neither pass them on to third
-#. parties, nor use them for other purposes, or publish them. They will be stored
-#. in Germany by the registered association OpenMusicContest.org as a
-#. representative of the C3S foundation initiative, according to the requirements
-#. of the Federal Data Protection Act. By sending an email to
-#: c3sintent/templates/faq.pt:141
+#. launch of the upcoming crowdfunding. After the forming of C3S the data will be
+#. deleted. Data will also be deleted if you reconsider your decision and you want
+#. to revoke your declaration of intent. If you want us to delete your data or
+#. revoke your declaration, please send us a written notification.
+#: c3sintent/templates/faq.pt:146
 msgid "faq-paragraph-data1"
+msgstr ""
+
+#. Default: We will neither pass them on to third parties, nor use them for other
+#. purposes, or publish them. They will be stored in Germany by the registered
+#. association OpenMusicContest.org as a representative of the C3S foundation
+#. initiative, according to the requirements of the Federal Data Protection Act. By
+#. sending an email to
+#: c3sintent/templates/faq.pt:149
+msgid "faq-paragraph-data4"
 msgstr ""
 
 #. Default: you may order your data to be deleted at any time, and without giving
@@ -572,18 +605,18 @@ msgstr ""
 #. have the result that we can not get in touch with you, should you wish to join
 #. the collecting society. You can read the details about how we handle your data
 #. (Data Protection Declaration) separately on our website at
-#: c3sintent/templates/faq.pt:152
+#: c3sintent/templates/faq.pt:155
 msgid "faq-paragraph-data2"
 msgstr ""
 
 #. Default: http://www.c3s.cc/disclaimer-en.html
-#: c3sintent/templates/faq.pt:160
+#: c3sintent/templates/faq.pt:163
 msgid "faq-strong-data-url"
 msgstr ""
 
 #. Default: At first, please get information about the C3S and its aims, and then
 #. we can get going!
-#: c3sintent/templates/faq.pt:162
+#: c3sintent/templates/faq.pt:165
 msgid "faq-paragraph-data3"
 msgstr ""
 
@@ -613,7 +646,7 @@ msgstr ""
 msgid "intent-form-v2-intro-1-step2"
 msgstr ""
 
-#. Default: Step 3 -- You decide to become a founding member and make history.
+#. Default: Step 3 -- You decide to become a member and make history.
 #: c3sintent/templates/intent.pt:37
 msgid "intent-form-v2-intro-1-step3"
 msgstr ""
@@ -623,13 +656,12 @@ msgstr ""
 msgid "intent-form-v2-headline-2"
 msgstr ""
 
-#. Default: By signing the form you declare your intent to join C3S at its
-#. founding. In turn, you are going to receive a note telling you where &amp; when
-#. the crowdfunding for launching C3S will take place - even before the public.
-#. Then you can purchase shares in C3S, plus exclusive rewards &amp; goodies in
-#. extremely limited numbers. To be honest, we are already heavily adrenalised --
-#. 'cause something big is coming! Something that is only available with us. Be one
-#. of the first to pick your own reward!
+#. Default: By signing the form you declare your intent to join C3S right after its
+#. founding. In turn, you are the first to receive a note telling you where &amp;
+#. when the crowdfunding for launching C3S will take place -- even before the
+#. public. Then you can purchase shares in C3S, plus exclusive rewards &amp;
+#. goodies in extremely limited numbers. Something that is only available with us.
+#. Be one of the first to pick your own reward!
 #: c3sintent/templates/intent.pt:40
 msgid "intent-form-v2-intro-1"
 msgstr ""
@@ -639,8 +671,8 @@ msgstr ""
 msgid "intent-form-v2-headline-3"
 msgstr ""
 
-#. Default: When you participate in the crowdfunding you can become a Founding
-#. Member of C3S.
+#. Default: When you participate in the crowdfunding you can become one of the
+#. first members of C3S.
 #: c3sintent/templates/intent.pt:44
 msgid "intent-form-v2-intro-2"
 msgstr ""
@@ -650,7 +682,7 @@ msgstr ""
 msgid "intent-form-v2-headline-4"
 msgstr ""
 
-#. Default: Signing the Declaration of Intent ist not binding. You won't become a
+#. Default: Signing the Declaration of Intent is not binding. You won't become a
 #. member by signing the declaration. Neither you will have to pay.
 #: c3sintent/templates/intent.pt:48
 msgid "intent-form-v2-intro-3"
@@ -668,45 +700,59 @@ msgstr ""
 msgid "intent-form-v2-intro-4"
 msgstr ""
 
-#. Default: Disclaimer (Data Protection)
+#. Default: You want MORE?
+#: c3sintent/templates/intent.pt:55
+msgid "intent-form-v2-headline-7"
+msgstr ""
+
+#. Default: email us *now*
+#: c3sintent/templates/intent.pt:57
+msgid "email_us_now"
+msgstr ""
+
+#. Default: Founding Member of the world's first digital &amp; fair alternative for
+#. collecting your royalties -- how's that? If you would like to purchase ten or
+#. more shares (10x 50 € = 500 €) ${email_us_now}! We want you in as founders. The
+#. first 25 are part of the founding convention, the founding picture, the press
+#. release -- and an indispensable part of C3S history.
 #: c3sintent/templates/intent.pt:56
+msgid "intent-form-v2-intro-5"
+msgstr ""
+
+#. Default: Disclaimer (Data Protection)
+#: c3sintent/templates/intent.pt:60
 msgid "intent-form-disclaimer-title"
 msgstr ""
 
 #. Default: Frequently Asked Questions
-#: c3sintent/templates/intent.pt:61
+#: c3sintent/templates/intent.pt:65
 msgid "intent-form-faq-title"
 msgstr ""
 
 #. Default: information about C3S
-#: c3sintent/templates/intent.pt:66
+#: c3sintent/templates/intent.pt:70
 msgid "information_about_C3S"
 msgstr ""
 
 #. Default: At first, please get ${information_about_C3S} and its aims, and then we
 #. can get going!
-#: c3sintent/templates/intent.pt:65
+#: c3sintent/templates/intent.pt:69
 msgid "intent-form-reading-instructions"
 msgstr ""
 
 #. Default: Ok, folks -- fill in, sign it, make it happen!
-#: c3sintent/templates/intent.pt:70
+#: c3sintent/templates/intent.pt:74
 msgid "intent-form-v2-headline-6"
 msgstr ""
 
 #. Default: with an asterisk
-#: c3sintent/templates/intent.pt:72
+#: c3sintent/templates/intent.pt:76
 msgid "with_an_asterisk"
 msgstr ""
 
 #. Default: All questions ${with_an_asterisk} must be answered:
-#: c3sintent/templates/intent.pt:71
+#: c3sintent/templates/intent.pt:75
 msgid "intent-form-v2-answer-all"
-msgstr ""
-
-#. Default: C3S Declaration of Intent: Success
-#: c3sintent/templates/success.pt:12
-msgid "success-title"
 msgstr ""
 
 #. Default: That worked, ${firstname} ${lastname}!
@@ -714,14 +760,15 @@ msgstr ""
 msgid "success-headline-thanks"
 msgstr ""
 
-#. Default: What happens next: You download the form with your data, print out the
-#. second page, sign it and send it back to us.
+#. Default: What happens next: You need to check the information below to be
+#. correct, receive an email to verify your address, download the form with your
+#. data, print out the form, sign it and send it back to us.
 #: c3sintent/templates/success.pt:16
 msgid "success-paragraph-thanks"
 msgstr ""
 
 #. Default: Your data we received
-#: c3sintent/templates/success.pt:19
+#: c3sintent/templates/success.pt:21
 msgid "success-headline-data-received"
 msgstr ""
 
@@ -736,23 +783,36 @@ msgstr ""
 #. ${request.session['appstruct']['member_of_colsoc']} <dynamic element> Which one?
 #. ${request.session['appstruct']['name_of_colsoc']} <dynamic element> Supporting
 #. Member?: ${request.session['appstruct']['invest_member']} <dynamic element>
-#: c3sintent/templates/success.pt:20
+#: c3sintent/templates/success.pt:22
 msgid "success-paragraph-data-received"
 msgstr ""
 
 #. Default: In case there are errors or you want to change details <dynamic
 #. element>. If all information above is correct...
-#: c3sintent/templates/success.pt:36
+#: c3sintent/templates/success.pt:38
 msgid "success-paragraph-change-details"
 msgstr ""
 
-#. Default: Download your form here
-#: c3sintent/templates/success.pt:41
-msgid "success-headline-PDF-download"
+#. Default: Next: verify your email
+#: c3sintent/templates/success.pt:43
+msgid "success-headline-verify-email"
 msgstr ""
 
-#. Default: Your PDF is ready, you can download it here:
-#: c3sintent/templates/success.pt:42
-msgid "success-paragraph-PDF-download"
+#. Default: Click the button to have an email sent to your account. Then, check
+#. your email and use the link we send you to get your PDF. This needs to be
+#. printed out, signed, and sent back to us.
+#: c3sintent/templates/success.pt:44
+msgid "success-paragraph-verify-email"
+msgstr ""
+
+#. Default: Your Email has been confirmed, ${firstname} ${lastname}!
+#: c3sintent/templates/verify-mail.pt:17
+msgid "success-headline-verified-email"
+msgstr ""
+
+#. Default: Now that your email address has been confirmed, you may download your
+#. PDF.
+#: c3sintent/templates/verify-mail.pt:18
+msgid "success-paragraph-verified-email"
 msgstr ""
 
