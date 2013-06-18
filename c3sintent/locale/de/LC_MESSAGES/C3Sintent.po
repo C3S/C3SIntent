@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: C3S Declaration of Intent\n"
 "Report-Msgid-Bugs-To: https://github.com/C3S/C3SIntent/issues\n"
-"POT-Creation-Date: 2013-06-18 10:11+0200\n"
-"PO-Revision-Date: 2013-06-18 11:48+0100\n"
+"POT-Creation-Date: 2013-06-18 13:34+0200\n"
+"PO-Revision-Date: 2013-06-18 14:40+0100\n"
 "Last-Translator: Christoph Scheid <christoph.scheid@c3s.cc>\n"
 "Language-Team: German <translations@openmusiccontest.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -252,26 +252,23 @@ msgid "intent-form-title"
 msgstr "Absichtserklärung zum geplanten Beitritt zur Cultural Commons Collecting Society (C3S)"
 
 #. Default: C3S Declaration of Intent: Check your email
-#. Default: C3S Declaration of Intent: Success
-#. Default: C3S Declaration of Intent: Email Verification
 #: c3sintent/templates/check-mail.pt:12
-#: c3sintent/templates/success.pt:12
-#: c3sintent/templates/verify-mail.pt:12
-msgid "success-title"
-msgstr "C3S Absichtserklärung: Erfolg"
+#| msgid "success-title"
+msgid "check-email-title"
+msgstr "C3S Absichtserklärung: Emails abrufen"
 
 #. Default: Email was sent, ${firstname} ${lastname}!
 #: c3sintent/templates/check-mail.pt:15
-#| msgid "success-headline-thanks"
-msgid "success-headline-check-email"
-msgstr "Eine Email wurde abgeschickt, ${firstname} ${lastname}!"
+msgid "check-email-headline"
+msgstr "Eine Email wurde abgeschickt"
 
 #. Default: You will receive an email from noreply@c3s.cc with a link. Please
 #. check
 #. your email!
 #: c3sintent/templates/check-mail.pt:16
-#| msgid "success-paragraph-thanks"
-msgid "success-paragraph-check-email"
+#, fuzzy
+#| msgid "success-paragraph-check-email"
+msgid "check-email-paragraph-check-email"
 msgstr "Du wirst eine Email von noreply@c3s.cc erhalten, die einen Link enthält. Bitte rufe Deine Emails ab."
 
 #. Default: Data Protection Declaration
@@ -491,7 +488,6 @@ msgstr "wenn Du kein Bürger eines europäischen Staates bist, kannst Du Mitglie
 
 #. Default: for Germany.
 #: c3sintent/templates/faq.pt:88
-#| msgid "faq-strong-why"
 msgid "faq-strong-i11l3"
 msgstr "für Deutschland"
 
@@ -635,7 +631,6 @@ msgstr "Wir nutzen Eure Angaben ausschließlich, um Euch einmalig auf das Crowdf
 #. Act. By
 #. sending an email to
 #: c3sintent/templates/faq.pt:149
-#| msgid "faq-paragraph-data2"
 msgid "faq-paragraph-data4"
 msgstr "Keine der Daten werden an Dritte weitergegeben noch zu anderen Zwecken verwendet odergar veröffentlicht. Die Speicherung erfolgt in Deutschland und entsprechend der Vorgaben desBundesdatenschutzgesetzes durch den OpenMusicContest.org e.V. als Vertreter der C3S-Gründungsinitiative. Ihr könnt jederzeit und ohne Angabe von Gründen durch E-Mail an"
 
@@ -757,7 +752,6 @@ msgstr "Erst beim Crowdfunding entscheidest Du, ob Du ein Mitglied werden oder e
 
 #. Default: You want MORE?
 #: c3sintent/templates/intent.pt:55
-#| msgid "intent-form-v2-headline-6"
 msgid "intent-form-v2-headline-7"
 msgstr "Du möchtest MEHR?"
 
@@ -776,7 +770,6 @@ msgstr "Schreibe uns jetzt eine Email"
 #. press
 #. release -- and an indispensable part of C3S history.
 #: c3sintent/templates/intent.pt:56
-#| msgid "intent-form-v2-intro-4"
 msgid "intent-form-v2-intro-5"
 msgstr "Gründungsmitglied der digitalen & fairen GEMA-Alternative – wie klingt das? Wenn Du zehn oder mehr Anteile zeichnen möchtest (10x 50 € = 500 €), dann schreib uns *jetzt*! Wir wollen Euch als Gründer dabei haben. Die ersten 25 Interessenten sind bei derGründungsversammlung dabei, auf dem Gründungsfoto, in der Pressemeldung – undunverzichtbarer Teil der C3S-History."
 
@@ -817,7 +810,12 @@ msgstr "mit einem roten Sternchen"
 msgid "intent-form-v2-answer-all"
 msgstr "Alle Fragen ${with_an_asterisk} müssen beantwortet werden."
 
-#. Default: That worked, ${firstname} ${lastname}!
+#. Default: C3S Declaration of Intent: Success
+#: c3sintent/templates/success.pt:12
+msgid "success-title"
+msgstr "C3S Absichtserklärung: Erfolg"
+
+#. Default: That worked,
 #: c3sintent/templates/success.pt:15
 msgid "success-headline-thanks"
 msgstr "Das hat funktioniert, ${firstname} ${lastname}!"
@@ -835,64 +833,42 @@ msgstr "Nächster Schritt: Bitte die Angaben unten kontrollieren, eine Bestätig
 msgid "success-headline-data-received"
 msgstr "Diese Daten haben wir erhalten"
 
-#. Default: Firstname: ${firstname}<dynamic element> Lastname:
-#. ${lastname}<dynamic
-#. element> Email: ${request.session['appstruct']['email']} <dynamic element>
-#. Day
-#. of Birth: ${request.session['appstruct']['date_of_birth']} <dynamic element>
-#. City: ${request.session['appstruct']['city']} <dynamic element> Country:
-#. ${request.session['appstruct']['country']} <dynamic element> Band/Artist:
-#. ${request.session['appstruct']['opt_band']} <dynamic element> Homepage:
-#. ${request.session['appstruct']['opt_URL']} <dynamic element> Activities:
-#. ${activities} <dynamic element> Member of other Collecting Society:
-#. ${request.session['appstruct']['member_of_colsoc']} <dynamic element> Which
-#. one?
-#. ${request.session['appstruct']['name_of_colsoc']} <dynamic element>
-#. Supporting
-#. Member?: ${request.session['appstruct']['invest_member']} <dynamic element>
-#: c3sintent/templates/success.pt:22
-msgid "success-paragraph-data-received"
-msgstr "Vorname: ${firstname}<dynamic element> Nachname: ${lastname}<dynamic element> Email: ${request.session['appstruct']['email']} <dynamic element>Geburtstag: ${request.session['appstruct']['date_of_birth']} <dynamic element>Ort: ${request.session['appstruct']['city']} <dynamic element> Land: ${request.session['appstruct']['country']} <dynamic element> Band/Künstlername: ${request.session['appstruct']['opt_band']} <dynamic element> Homepage:${request.session['appstruct']['opt_URL']} <dynamic element> Tätigkeiten:${activities} <dynamic element> Mitglied einer anderen Verwertungsgesellschaft:${request.session['appstruct']['member_of_colsoc']} <dynamic element> Welche?${request.session['appstruct']['name_of_colsoc']} <dynamic element>Fördermitglied?: ${request.session['appstruct']['invest_member']} <dynamic element>"
-
 #. Default: In case there are errors or you want to change details <dynamic
 #. element>. If all information above is correct...
-#: c3sintent/templates/success.pt:38
+#: c3sintent/templates/success.pt:52
 msgid "success-paragraph-change-details"
 msgstr "Falls es Fehler gibt oder Einzelheiten geändert werden sollen <dynamicelement>. Falls alle Angaben stimmen..."
 
 #. Default: Next: verify your email
-#: c3sintent/templates/success.pt:43
-#| msgid "success-headline-thanks"
+#: c3sintent/templates/success.pt:57
 msgid "success-headline-verify-email"
 msgstr "Nächster Schritt: Email-Addresse bestätigen."
 
 #. Default: Click the button to have an email sent to your account. Then, check
 #. your email and use the link we send you to get your PDF. This needs to be
 #. printed out, signed, and sent back to us.
-#: c3sintent/templates/success.pt:44
-#| msgid "success-paragraph-thanks"
+#: c3sintent/templates/success.pt:58
 msgid "success-paragraph-verify-email"
 msgstr "Ein Klick auf den Button wird eine Email an Deine Adresse abschicken. Danach bitte die Emails abrufen und den enthaltenen Link anklicken, um das PDF zu laden. Es muss ausgedruckt und unterschrieben werden und an uns zurückgesandt."
 
+#: c3sintent/templates/success.pt:65
+msgid "Send Mail"
+msgstr "Email Abschicken"
+
+#. Default: C3S Declaration of Intent: Email Verification
+#: c3sintent/templates/verify-mail.pt:12
+msgid "verify-email-title"
+msgstr "C3S Absichtserklärung: Überprüfung der Email-Adresse"
+
 #. Default: Your Email has been confirmed, ${firstname} ${lastname}!
 #: c3sintent/templates/verify-mail.pt:17
-#| msgid "success-headline-thanks"
-msgid "success-headline-verified-email"
-msgstr "Deine Email-Adresse wurde bestätigt, ${firstname} ${lastname}!"
+msgid "verified-email-headline"
+msgstr "Die Email-Adresse wurde bestätigt"
 
 #. Default: Now that your email address has been confirmed, you may download
 #. your
 #. PDF.
 #: c3sintent/templates/verify-mail.pt:18
-#| msgid "success-paragraph-thanks"
-msgid "success-paragraph-verified-email"
-msgstr "Nachdem die Email-Adresse bestätigt ist, kannst Du jetzt das PDF-Formular herunterladen."
+msgid "verified-email-paragraph"
+msgstr "Jetzt kannst Du das PDF herunterladen."
 
-#~ msgid "faq-strong-join3"
-#~ msgstr ""
-
-#~ msgid "success-headline-PDF-download"
-#~ msgstr ""
-
-#~ msgid "success-paragraph-PDF-download"
-#~ msgstr ""

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: C3S Declaration of Intent\n"
 "Report-Msgid-Bugs-To: https://github.com/C3S/C3SIntent/issues\n"
-"POT-Creation-Date: 2013-06-18 10:11+0200\n"
+"POT-Creation-Date: 2013-06-18 13:34+0200\n"
 "PO-Revision-Date: 2012-09-26 20:31+0000\n"
 "Last-Translator: jtm_tango <jtucat@tango4.com>\n"
 "Language-Team: Spanish <translations@openmusiccontest.org>\n"
@@ -266,17 +266,15 @@ msgstr ""
 "Society (C3S)"
 
 #. Default: C3S Declaration of Intent: Check your email
-#. Default: C3S Declaration of Intent: Success
-#. Default: C3S Declaration of Intent: Email Verification
-#: c3sintent/templates/check-mail.pt:12 c3sintent/templates/success.pt:12
-#: c3sintent/templates/verify-mail.pt:12
+#: c3sintent/templates/check-mail.pt:12
 #, fuzzy
-msgid "success-title"
+#| msgid "success-title"
+msgid "check-email-title"
 msgstr "Declaración de Protección de la Información"
 
 #. Default: Email was sent, ${firstname} ${lastname}!
 #: c3sintent/templates/check-mail.pt:15
-msgid "success-headline-check-email"
+msgid "check-email-headline"
 msgstr ""
 
 #. Default: You will receive an email from noreply@c3s.cc with a link. Please
@@ -284,8 +282,8 @@ msgstr ""
 #. your email!
 #: c3sintent/templates/check-mail.pt:16
 #, fuzzy
-#| msgid "success-paragraph-thanks"
-msgid "success-paragraph-check-email"
+#| msgid "success-paragraph-check-email"
+msgid "check-email-paragraph-check-email"
 msgstr "Ver el ${OMC-imprint-link-title} para más información."
 
 #. Default: Data Protection Declaration
@@ -551,7 +549,6 @@ msgstr ""
 #. Default: for Germany.
 #: c3sintent/templates/faq.pt:88
 #, fuzzy
-#| msgid "faq-paragraph-i11l2"
 msgid "faq-strong-i11l3"
 msgstr ""
 "Para evitar falsificaciones, te preguntaremos no sólo tu nombre, sino "
@@ -714,7 +711,6 @@ msgstr "Enviando un email a"
 #. sending an email to
 #: c3sintent/templates/faq.pt:149
 #, fuzzy
-#| msgid "faq-paragraph-data2"
 msgid "faq-paragraph-data4"
 msgstr ""
 "puedes pedir que se eliminen tus datos en cualquier momento, y sin dar "
@@ -924,7 +920,6 @@ msgstr ""
 #. Default: You want MORE?
 #: c3sintent/templates/intent.pt:55
 #, fuzzy
-#| msgid "intent-form-v2-headline-6"
 msgid "intent-form-v2-headline-7"
 msgstr ""
 "Para evitar falsificaciones, te preguntaremos no sólo tu nombre, sino "
@@ -952,7 +947,6 @@ msgstr ""
 #. release -- and an indispensable part of C3S history.
 #: c3sintent/templates/intent.pt:56
 #, fuzzy
-#| msgid "intent-form-v2-intro-4"
 msgid "intent-form-v2-intro-5"
 msgstr ""
 "Tienes que ser compositor, letrista, músico, productor musical, remixer o"
@@ -1015,7 +1009,13 @@ msgstr ""
 msgid "intent-form-v2-answer-all"
 msgstr "Por favor, responde ${all} pregunta/s:"
 
-#. Default: That worked, ${firstname} ${lastname}!
+#. Default: C3S Declaration of Intent: Success
+#: c3sintent/templates/success.pt:12
+#, fuzzy
+msgid "success-title"
+msgstr "Declaración de Protección de la Información"
+
+#. Default: That worked,
 #: c3sintent/templates/success.pt:15
 msgid "success-headline-thanks"
 msgstr ""
@@ -1034,71 +1034,66 @@ msgstr "Ver el ${OMC-imprint-link-title} para más información."
 msgid "success-headline-data-received"
 msgstr ""
 
-#. Default: Firstname: ${firstname}<dynamic element> Lastname:
-#. ${lastname}<dynamic
-#. element> Email: ${request.session['appstruct']['email']} <dynamic element>
-#. Day
-#. of Birth: ${request.session['appstruct']['date_of_birth']} <dynamic element>
-#. City: ${request.session['appstruct']['city']} <dynamic element> Country:
-#. ${request.session['appstruct']['country']} <dynamic element> Band/Artist:
-#. ${request.session['appstruct']['opt_band']} <dynamic element> Homepage:
-#. ${request.session['appstruct']['opt_URL']} <dynamic element> Activities:
-#. ${activities} <dynamic element> Member of other Collecting Society:
-#. ${request.session['appstruct']['member_of_colsoc']} <dynamic element> Which
-#. one?
-#. ${request.session['appstruct']['name_of_colsoc']} <dynamic element>
-#. Supporting
-#. Member?: ${request.session['appstruct']['invest_member']} <dynamic element>
-#: c3sintent/templates/success.pt:22
-#, fuzzy
-msgid "success-paragraph-data-received"
-msgstr ""
-"puedes pedir que se eliminen tus datos en cualquier momento, y sin dar "
-"ningún tipo de explicaciones. A la misma dirección puedes pedir "
-"información sobre los datos que tengamos almacenados sobre ti. Ten en "
-"cuenta que si tus datos son eliminados, no podremos ponernos en contacto "
-"contigo en caso de que quieras unirte a la Sociedad de Gestión."
-
 #. Default: In case there are errors or you want to change details <dynamic
 #. element>. If all information above is correct...
-#: c3sintent/templates/success.pt:38
+#: c3sintent/templates/success.pt:52
 msgid "success-paragraph-change-details"
 msgstr ""
 
 #. Default: Next: verify your email
-#: c3sintent/templates/success.pt:43
+#: c3sintent/templates/success.pt:57
 msgid "success-headline-verify-email"
 msgstr ""
 
 #. Default: Click the button to have an email sent to your account. Then, check
 #. your email and use the link we send you to get your PDF. This needs to be
 #. printed out, signed, and sent back to us.
-#: c3sintent/templates/success.pt:44
+#: c3sintent/templates/success.pt:58
 #, fuzzy
-#| msgid "success-paragraph-thanks"
 msgid "success-paragraph-verify-email"
 msgstr "Ver el ${OMC-imprint-link-title} para más información."
 
+#: c3sintent/templates/success.pt:65
+msgid "Send Mail"
+msgstr ""
+
+#. Default: C3S Declaration of Intent: Email Verification
+#: c3sintent/templates/verify-mail.pt:12
+msgid "verify-email-title"
+msgstr ""
+
 #. Default: Your Email has been confirmed, ${firstname} ${lastname}!
 #: c3sintent/templates/verify-mail.pt:17
-msgid "success-headline-verified-email"
+msgid "verified-email-headline"
 msgstr ""
 
 #. Default: Now that your email address has been confirmed, you may download
 #. your
 #. PDF.
 #: c3sintent/templates/verify-mail.pt:18
-#, fuzzy
-#| msgid "success-paragraph-thanks"
-msgid "success-paragraph-verified-email"
-msgstr "Ver el ${OMC-imprint-link-title} para más información."
+msgid "verified-email-paragraph"
+msgstr ""
 
-#~ msgid "faq-strong-join3"
+#~ msgid "success-headline-check-email"
 #~ msgstr ""
 
-#~ msgid "success-headline-PDF-download"
+#~ msgid "success-paragraph-data-received"
+#~ msgstr ""
+#~ "puedes pedir que se eliminen tus "
+#~ "datos en cualquier momento, y sin "
+#~ "dar ningún tipo de explicaciones. A "
+#~ "la misma dirección puedes pedir "
+#~ "información sobre los datos que tengamos"
+#~ " almacenados sobre ti. Ten en cuenta"
+#~ " que si tus datos son eliminados, "
+#~ "no podremos ponernos en contacto contigo"
+#~ " en caso de que quieras unirte "
+#~ "a la Sociedad de Gestión."
+
+#~ msgid "success-headline-verified-email"
 #~ msgstr ""
 
-#~ msgid "success-paragraph-PDF-download"
-#~ msgstr ""
+# | msgid "success-paragraph-thanks"
+#~ msgid "success-paragraph-verified-email"
+#~ msgstr "Ver el ${OMC-imprint-link-title} para más información."
 

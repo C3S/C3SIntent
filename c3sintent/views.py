@@ -94,7 +94,7 @@ def show_success(request):
     if ('appstruct' in request.session):
         # we do have valid info from the form in the session
         appstruct = request.session['appstruct']
-        print("show_success: locale: %s") % appstruct['_LOCALE_']
+        #print("show_success: locale: %s") % appstruct['_LOCALE_']
         # gather activities for easier display in template
         activities = ''
         for act in appstruct['activity']:

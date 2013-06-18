@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: C3S Declaration of Intent\n"
 "Report-Msgid-Bugs-To: https://github.com/C3S/C3SIntent/issues\n"
-"POT-Creation-Date: 2013-06-18 10:11+0200\n"
+"POT-Creation-Date: 2013-06-18 13:34+0200\n"
 "PO-Revision-Date: 2012-10-18 13:52+0000\n"
 "Last-Translator: AnneGilles <a@shri.de>\n"
 "Language-Team: Danish "
@@ -268,23 +268,20 @@ msgid "intent-form-title"
 msgstr ""
 
 #. Default: C3S Declaration of Intent: Check your email
-#. Default: C3S Declaration of Intent: Success
-#. Default: C3S Declaration of Intent: Email Verification
-#: c3sintent/templates/check-mail.pt:12 c3sintent/templates/success.pt:12
-#: c3sintent/templates/verify-mail.pt:12
-msgid "success-title"
+#: c3sintent/templates/check-mail.pt:12
+msgid "check-email-title"
 msgstr ""
 
 #. Default: Email was sent, ${firstname} ${lastname}!
 #: c3sintent/templates/check-mail.pt:15
-msgid "success-headline-check-email"
+msgid "check-email-headline"
 msgstr ""
 
 #. Default: You will receive an email from noreply@c3s.cc with a link. Please
 #. check
 #. your email!
 #: c3sintent/templates/check-mail.pt:16
-msgid "success-paragraph-check-email"
+msgid "check-email-paragraph-check-email"
 msgstr ""
 
 #. Default: Data Protection Declaration
@@ -826,7 +823,12 @@ msgstr ""
 msgid "intent-form-v2-answer-all"
 msgstr ""
 
-#. Default: That worked, ${firstname} ${lastname}!
+#. Default: C3S Declaration of Intent: Success
+#: c3sintent/templates/success.pt:12
+msgid "success-title"
+msgstr ""
+
+#. Default: That worked,
 #: c3sintent/templates/success.pt:15
 msgid "success-headline-thanks"
 msgstr ""
@@ -844,61 +846,57 @@ msgstr ""
 msgid "success-headline-data-received"
 msgstr ""
 
-#. Default: Firstname: ${firstname}<dynamic element> Lastname:
-#. ${lastname}<dynamic
-#. element> Email: ${request.session['appstruct']['email']} <dynamic element>
-#. Day
-#. of Birth: ${request.session['appstruct']['date_of_birth']} <dynamic element>
-#. City: ${request.session['appstruct']['city']} <dynamic element> Country:
-#. ${request.session['appstruct']['country']} <dynamic element> Band/Artist:
-#. ${request.session['appstruct']['opt_band']} <dynamic element> Homepage:
-#. ${request.session['appstruct']['opt_URL']} <dynamic element> Activities:
-#. ${activities} <dynamic element> Member of other Collecting Society:
-#. ${request.session['appstruct']['member_of_colsoc']} <dynamic element> Which
-#. one?
-#. ${request.session['appstruct']['name_of_colsoc']} <dynamic element>
-#. Supporting
-#. Member?: ${request.session['appstruct']['invest_member']} <dynamic element>
-#: c3sintent/templates/success.pt:22
-msgid "success-paragraph-data-received"
-msgstr ""
-
 #. Default: In case there are errors or you want to change details <dynamic
 #. element>. If all information above is correct...
-#: c3sintent/templates/success.pt:38
+#: c3sintent/templates/success.pt:52
 msgid "success-paragraph-change-details"
 msgstr ""
 
 #. Default: Next: verify your email
-#: c3sintent/templates/success.pt:43
+#: c3sintent/templates/success.pt:57
 msgid "success-headline-verify-email"
 msgstr ""
 
 #. Default: Click the button to have an email sent to your account. Then, check
 #. your email and use the link we send you to get your PDF. This needs to be
 #. printed out, signed, and sent back to us.
-#: c3sintent/templates/success.pt:44
+#: c3sintent/templates/success.pt:58
 msgid "success-paragraph-verify-email"
+msgstr ""
+
+#: c3sintent/templates/success.pt:65
+msgid "Send Mail"
+msgstr ""
+
+#. Default: C3S Declaration of Intent: Email Verification
+#: c3sintent/templates/verify-mail.pt:12
+msgid "verify-email-title"
 msgstr ""
 
 #. Default: Your Email has been confirmed, ${firstname} ${lastname}!
 #: c3sintent/templates/verify-mail.pt:17
-msgid "success-headline-verified-email"
+msgid "verified-email-headline"
 msgstr ""
 
 #. Default: Now that your email address has been confirmed, you may download
 #. your
 #. PDF.
 #: c3sintent/templates/verify-mail.pt:18
-msgid "success-paragraph-verified-email"
+msgid "verified-email-paragraph"
 msgstr ""
 
-#~ msgid "faq-strong-join3"
+#~ msgid "success-headline-check-email"
 #~ msgstr ""
 
-#~ msgid "success-headline-PDF-download"
+#~ msgid "success-paragraph-check-email"
 #~ msgstr ""
 
-#~ msgid "success-paragraph-PDF-download"
+#~ msgid "success-paragraph-data-received"
+#~ msgstr ""
+
+#~ msgid "success-headline-verified-email"
+#~ msgstr ""
+
+#~ msgid "success-paragraph-verified-email"
 #~ msgstr ""
 

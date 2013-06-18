@@ -12,14 +12,15 @@
     <h1 i18n:translate="success-title">C3S Declaration of Intent: Success</h1>
   </tal:block>
   <tal:block metal:fill-slot="bottom">
-    <h3 i18n:translate="success-headline-thanks" class="deform">That worked, ${firstname} ${lastname}!</h3>
+    <h3><span i18n:translate="success-headline-thanks" class="deform">That worked, </span> ${firstname} ${lastname}!</h3>
     <p i18n:translate="success-paragraph-thanks">
       What happens next: You need to check the information below to be correct,
       receive an email to verify your address, download the form with your data,
       print out the form, sign it and send it back to us.
     </p>
     <h3 i18n:translate="success-headline-data-received">Your data we received</h3>
-    <p i18n:translate="success-paragraph-data-received">
+    
+    <p tal:condition="request.session['appstruct']['_LOCALE_'] == 'en'"> <!-- english -->
       Firstname: ${firstname}<br />
       Lastname: ${lastname}<br />
       Email: ${request.session['appstruct']['email']} <br />
@@ -32,8 +33,21 @@
       Member of other Collecting Society: ${request.session['appstruct']['member_of_colsoc']} <br />
       Which one? ${request.session['appstruct']['name_of_colsoc']} <br />
       Supporting Member?: ${request.session['appstruct']['invest_member']} <br />
-      <!-- : $ off {request.session['appstruct'][']} <br /> -->
-      <!-- : $ off {request.session['appstruct'][']} <br /> -->
+    </p>
+    
+    <p tal:condition="request.session['appstruct']['_LOCALE_'] == 'de'"> <!-- german -->
+      Vorname: ${firstname}<br />
+      Nachname: ${lastname}<br />
+      Email: ${request.session['appstruct']['email']} <br />
+      Geburtstag: ${request.session['appstruct']['date_of_birth']} <br />
+      Ort: ${request.session['appstruct']['city']} <br />
+      Land: ${request.session['appstruct']['country']} <br />
+      Band/Künstlername: ${request.session['appstruct']['opt_band']} <br />
+      Homepage: ${request.session['appstruct']['opt_URL']} <br />
+      Tätigkeiten: ${activities} <br />
+      Mitglied einer anderen Verwertungsgesellschaft: ${'ja' if (request.session['appstruct']['member_of_colsoc'] == 'yes') else 'nein'} <br />
+      Welcher? ${request.session['appstruct']['name_of_colsoc']} <br />
+      Fördermitglied?: ${'ja' if (request.session['appstruct']['invest_member'] == 'yes') else 'nein'} <br />
     </p>
     <p i18n:translate="success-paragraph-change-details">
       In case there are errors or you want to change details
@@ -48,7 +62,7 @@
     </p>
     <p>
       <form method="POST" action="/check_email">
-        <input type="submit" name="submit" value="send mail" />
+        <input type="submit" name="submit" value="Send Mail" i18n:attributes="value"/>
       </form>
     </p>
     <p>
