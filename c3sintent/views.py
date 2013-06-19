@@ -215,7 +215,7 @@ def success_verify_email(request):
         if signee.is_lyricist:
             activities.append(u'lyricist')
         if signee.is_producer:
-            activities.append(u'producer')
+            activities.append(u'music producer')
         if signee.is_remixer:
             activities.append(u'remixer')
         if signee.is_dj:
@@ -230,8 +230,8 @@ def success_verify_email(request):
             '_LOCALE_': signee.locale,
             'date_of_birth': signee.date_of_birth,
             'activity': set(activities),
-            'invest_member': signee.invest_member,
-            'member_of_colsoc': signee.member_of_colsoc,
+            'invest_member': u'yes' if signee.invest_member else u'no',
+            'member_of_colsoc': u'yes' if signee.member_of_colsoc else 'no',
             'name_of_colsoc': signee.name_of_colsoc,
             'opt_band': signee.opt_band,
             'opt_URL': signee.opt_URL,
@@ -568,7 +568,7 @@ def declare_intent(request):
             email_confirm_code=randomstring,
             is_composer=('composer' in appstruct['activity']),
             is_lyricist=('lyricist' in appstruct['activity']),
-            is_producer=('producer' in appstruct['activity']),
+            is_producer=('music producer' in appstruct['activity']),
             is_remixer=('remixer' in appstruct['activity']),
             is_dj=('dj' in appstruct['activity']),
             date_of_submission=datetime.now(),
