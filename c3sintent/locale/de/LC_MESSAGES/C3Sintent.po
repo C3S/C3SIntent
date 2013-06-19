@@ -7,13 +7,14 @@
 # AnneGilles <a@shri.de>, 2013
 # AnneGilles <a@shri.de>, 2012
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2012
+# Wolfgang Senges <wolfgang.senges@googlemail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: C3S Declaration of Intent\n"
 "Report-Msgid-Bugs-To: https://github.com/AnneGilles/C3SIntent/issues\n"
 "POT-Creation-Date: 2013-06-18 13:34+0200\n"
-"PO-Revision-Date: 2013-06-19 08:24+0000\n"
-"Last-Translator: AnneGilles <a@shri.de>\n"
+"PO-Revision-Date: 2013-06-19 09:37+0000\n"
+"Last-Translator: Wolfgang Senges <wolfgang.senges@googlemail.com>\n"
 "Language-Team: German <translations@openmusiccontest.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -222,7 +223,7 @@ msgstr "Geburtsdatum"
 
 #: c3sintent/views.py:460
 msgid "${val} is earlier than earliest date ${min}"
-msgstr "${val} is früher als der frühestmögliche Zeitpunkt ${min}"
+msgstr "${val} ist früher als der frühestmögliche Zeitpunkt ${min}"
 
 #: c3sintent/views.py:461
 msgid "${val} is later than latest date ${max}"
@@ -294,7 +295,7 @@ msgstr "Datenschutzerklärung"
 #. you wish to withdraw your declaration.
 #: c3sintent/templates/disclaimer.pt:18
 msgid "disclaimer-v2-paragraph-1"
-msgstr "Wir nutzen Eure Angaben ausschließlich, um Euch einmalig auf das Crowdfunding zurGründung hinzuweisen. Nach Gründung werden Eure Daten gelöscht. Sie werden ebenfalls gelöscht, wenn Ihr Eure Absichtserklärung überdenkt und zurückziehen möchtet und uns das schriftlich mitteilt."
+msgstr "Wir nutzen Eure Angaben ausschließlich, um Euch einmalig auf das Crowdfunding zur Gründung hinzuweisen. Nach Gründung werden Eure Daten gelöscht. Sie werden ebenfalls gelöscht, wenn Ihr Eure Absichtserklärung überdenkt und zurückziehen möchtet und uns das schriftlich mitteilt."
 
 #. Default: In order to prevent falsifications, we will ask you not only for
 #. your
@@ -310,7 +311,7 @@ msgstr "Wir nutzen Eure Angaben ausschließlich, um Euch einmalig auf das Crowdf
 #. of the Federal Data Protection Act.
 #: c3sintent/templates/disclaimer.pt:21
 msgid "disclaimer-v2-paragraph-2"
-msgstr ""
+msgstr "In order to prevent falsifications, we will ask you not only for your name, but also for your email and date of birth. Of course we will only use your data for the founding process of the C3S and will neither pass them on to third parties, nor use them for other purposes, or publish them. They will be stored in Germany by the registered association OpenMusicContest.org as representative of the C3S foundation initiative, according to the requirements of the Federal Data Protection Act."
 
 #. Default: By sending an e-mail to
 #: c3sintent/templates/disclaimer.pt:24
@@ -380,7 +381,7 @@ msgstr "Wie viele Erklärungen braucht die C3S zur Gründung?"
 #. launch.
 #: c3sintent/templates/faq.pt:31
 msgid "faq-strong-howmany1"
-msgstr "Mit ca. 600 Anteilszeichnern beim Crowdfunding ist das Startkapital gesichert."
+msgstr "Mit ca. 1.000 Anteilszeichnern beim Crowdfunding ist ein guter Start gesichert."
 
 #. Default: <dynamic element> The sooner we meet this number, the sooner we
 #. launch.
@@ -389,12 +390,12 @@ msgstr "Mit ca. 600 Anteilszeichnern beim Crowdfunding ist das Startkapital gesi
 #. jobs on offer for developers.
 #: c3sintent/templates/faq.pt:30
 msgid "faq-paragraph-howmany1"
-msgstr "Wir haben das Ziel, mehr als 1.000 Personen zu erreichen, die zu einer Mitgliedschaft bereit sind. <dynamic element> Je schneller wir die erforderliche Zahl erreichen, desto eher wird die C3S gegründet."
+msgstr "<dynamic element> Je schneller wir die erforderliche Zahl erreichen, desto eher wird die C3S gegründet. Wir haben aber das Ziel, weit mehr als Mitglieder zu gewinnen. Und vor allem Entwicklern feste Stellen zum Aufbau der Technik zu bieten."
 
 #. Default: But this time, it is about 3,000 members who are required.
 #: c3sintent/templates/faq.pt:38
 msgid "faq-strong-howmany2"
-msgstr "Besser noch: Je mehr Unterschriften wir sammeln können, desto eher erfüllen wir auch die strengeren Anforderungen des Deutschen Patent- und Markenamts (DPMA). Die Zulassung durch das DPMA kann aber erst nach der Gründung beantragt werden."
+msgstr "Nach unserer aktuellen Kalkulation benötigen wir zur späteren Zulassung ca. 3.000 Mitglieder."
 
 #. Default: The more of you are signing, the sooner we meet the requirements
 #. of
@@ -405,7 +406,7 @@ msgstr "Besser noch: Je mehr Unterschriften wir sammeln können, desto eher erf�
 #. <dynamic element>
 #: c3sintent/templates/faq.pt:36
 msgid "faq-paragraph-howmany2"
-msgstr "Je mehr Unterschriften wir sammeln können, desto eher erfüllen wir auch die strengeren Anforderungen des Deutschen Patent- und Markenamts (DPMA). Die Zulassung durch das DPMA kann aber erst nach der Gründung beantragt werden."
+msgstr "Je mehr Unterschriften wir sammeln können, desto eher erfüllen wir auch die strengeren Anforderungen des Deutschen Patent- und Markenamts (DPMA). Die Zulassung durch das DPMA kann aber erst nach der Gründung beantragt werden. Nach unserer aktuellen Kalkulation benötigen wir zur späteren Zulassung ca. 3.000 Mitglieder. <dynamic element>"
 
 #. Default: Who may sign the declaration?
 #: c3sintent/templates/faq.pt:42
