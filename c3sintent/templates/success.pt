@@ -51,7 +51,7 @@
     </p>
     <p i18n:translate="success-paragraph-change-details">
       In case there are errors or you want to change details
-      <a href="${request.route_url('intent')}">please use the form again</a>.
+      <a href="${request.route_url('intent')}" i18n:translate="revisit-the-form">please use the form again</a>.
       If all information above is correct...
     </p>
     <h3 i18n:translate="success-headline-verify-email" class="deform">Next: verify your email</h3>

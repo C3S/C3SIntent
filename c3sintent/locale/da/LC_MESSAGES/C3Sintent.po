@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: C3S Declaration of Intent\n"
 "Report-Msgid-Bugs-To: https://github.com/C3S/C3SIntent/issues\n"
-"POT-Creation-Date: 2013-06-18 13:34+0200\n"
+"POT-Creation-Date: 2013-06-19 22:06+0200\n"
 "PO-Revision-Date: 2012-10-18 13:52+0000\n"
 "Last-Translator: AnneGilles <a@shri.de>\n"
 "Language-Team: Danish "
@@ -437,9 +437,8 @@ msgstr ""
 msgid "faq-headline-join"
 msgstr ""
 
-#. Default: a musician who writes, arranges or remixes songs can purchase
-#. shares in
-#. C3S
+#. Default: a musician who writes, arranges or remixes songs you can purchase
+#. shares in C3S
 #: c3sintent/templates/faq.pt:57
 msgid "faq-strong-join1"
 msgstr ""
@@ -673,43 +672,30 @@ msgstr ""
 msgid "faq-paragraph-data3"
 msgstr ""
 
-#. Default: After submitting the form below, you will be presented with a PDF
-#. download (~50 KB) with your data filled in. Please print it out entirely.
-#. Take
-#. your time and read them carefully - and don't forget to sign! Send all (!)
-#. pages
-#. scanned or printed to C3S. Please find the addresses on the first page. We
-#. will
-#. receive your data via encrypted email -- and then wait for your signature to
-#. make it valid!
-#: c3sintent/templates/intent.pt:29
-msgid "intent-form-v2-note"
-msgstr ""
-
 #. Default: Start the fire!
-#: c3sintent/templates/intent.pt:33
+#: c3sintent/templates/intent.pt:28
 msgid "intent-form-v2-headline-1"
 msgstr ""
 
 #. Default: Step 1 -- Want to be a part of the action? Make your stand and give
 #. us
 #. your GO by signing!
-#: c3sintent/templates/intent.pt:35
+#: c3sintent/templates/intent.pt:30
 msgid "intent-form-v2-intro-1-step1"
 msgstr ""
 
 #. Default: Step 2 -- 1,000 signatures in -- then C3S is being founded.
-#: c3sintent/templates/intent.pt:36
+#: c3sintent/templates/intent.pt:31
 msgid "intent-form-v2-intro-1-step2"
 msgstr ""
 
 #. Default: Step 3 -- You decide to become a member and make history.
-#: c3sintent/templates/intent.pt:37
+#: c3sintent/templates/intent.pt:32
 msgid "intent-form-v2-intro-1-step3"
 msgstr ""
 
 #. Default: What's going on.
-#: c3sintent/templates/intent.pt:39
+#: c3sintent/templates/intent.pt:34
 msgid "intent-form-v2-headline-2"
 msgstr ""
 
@@ -722,35 +708,35 @@ msgstr ""
 #. goodies in extremely limited numbers. Something that is only available with
 #. us.
 #. Be one of the first to pick your own reward!
-#: c3sintent/templates/intent.pt:40
+#: c3sintent/templates/intent.pt:35
 msgid "intent-form-v2-intro-1"
 msgstr ""
 
 #. Default: Making History.
-#: c3sintent/templates/intent.pt:43
+#: c3sintent/templates/intent.pt:38
 msgid "intent-form-v2-headline-3"
 msgstr ""
 
 #. Default: When you participate in the crowdfunding you can become one of the
 #. first members of C3S.
-#: c3sintent/templates/intent.pt:44
+#: c3sintent/templates/intent.pt:39
 msgid "intent-form-v2-intro-2"
 msgstr ""
 
 #. Default: No cheap tricks.
-#: c3sintent/templates/intent.pt:47
+#: c3sintent/templates/intent.pt:42
 msgid "intent-form-v2-headline-4"
 msgstr ""
 
 #. Default: Signing the Declaration of Intent is not binding. You won't become
 #. a
 #. member by signing the declaration. Neither you will have to pay.
-#: c3sintent/templates/intent.pt:48
+#: c3sintent/templates/intent.pt:43
 msgid "intent-form-v2-intro-3"
 msgstr ""
 
 #. Default: Yay! Count me in!
-#: c3sintent/templates/intent.pt:51
+#: c3sintent/templates/intent.pt:46
 msgid "intent-form-v2-headline-5"
 msgstr ""
 
@@ -759,17 +745,17 @@ msgstr ""
 #. as a member or supporter. We hope you do. We are looking forward to welcome
 #. you
 #. on board!
-#: c3sintent/templates/intent.pt:52
+#: c3sintent/templates/intent.pt:47
 msgid "intent-form-v2-intro-4"
 msgstr ""
 
 #. Default: You want MORE?
-#: c3sintent/templates/intent.pt:55
+#: c3sintent/templates/intent.pt:50
 msgid "intent-form-v2-headline-7"
 msgstr ""
 
 #. Default: email us *now*
-#: c3sintent/templates/intent.pt:57
+#: c3sintent/templates/intent.pt:52
 msgid "email_us_now"
 msgstr ""
 
@@ -782,44 +768,44 @@ msgstr ""
 #. first 25 are part of the founding convention, the founding picture, the
 #. press
 #. release -- and an indispensable part of C3S history.
-#: c3sintent/templates/intent.pt:56
+#: c3sintent/templates/intent.pt:51
 msgid "intent-form-v2-intro-5"
 msgstr ""
 
 #. Default: Disclaimer (Data Protection)
-#: c3sintent/templates/intent.pt:60
+#: c3sintent/templates/intent.pt:55
 msgid "intent-form-disclaimer-title"
 msgstr ""
 
 #. Default: Frequently Asked Questions
-#: c3sintent/templates/intent.pt:65
+#: c3sintent/templates/intent.pt:60
 msgid "intent-form-faq-title"
 msgstr ""
 
 #. Default: information about C3S
-#: c3sintent/templates/intent.pt:70
+#: c3sintent/templates/intent.pt:65
 msgid "information_about_C3S"
 msgstr "information om C3S"
 
 #. Default: At first, please get ${information_about_C3S} and its aims, and
 #. then we
 #. can get going!
-#: c3sintent/templates/intent.pt:69
+#: c3sintent/templates/intent.pt:64
 msgid "intent-form-reading-instructions"
 msgstr ""
 
 #. Default: Ok, folks -- fill in, sign it, make it happen!
-#: c3sintent/templates/intent.pt:74
+#: c3sintent/templates/intent.pt:69
 msgid "intent-form-v2-headline-6"
 msgstr ""
 
 #. Default: with an asterisk
-#: c3sintent/templates/intent.pt:76
+#: c3sintent/templates/intent.pt:71
 msgid "with_an_asterisk"
 msgstr ""
 
 #. Default: All questions ${with_an_asterisk} must be answered:
-#: c3sintent/templates/intent.pt:75
+#: c3sintent/templates/intent.pt:70
 msgid "intent-form-v2-answer-all"
 msgstr ""
 
@@ -844,6 +830,11 @@ msgstr ""
 #. Default: Your data we received
 #: c3sintent/templates/success.pt:21
 msgid "success-headline-data-received"
+msgstr ""
+
+#. Default: please use the form again
+#: c3sintent/templates/success.pt:54
+msgid "revisit-the-form"
 msgstr ""
 
 #. Default: In case there are errors or you want to change details <dynamic
@@ -885,18 +876,6 @@ msgstr ""
 msgid "verified-email-paragraph"
 msgstr ""
 
-#~ msgid "success-headline-check-email"
-#~ msgstr ""
-
-#~ msgid "success-paragraph-check-email"
-#~ msgstr ""
-
-#~ msgid "success-paragraph-data-received"
-#~ msgstr ""
-
-#~ msgid "success-headline-verified-email"
-#~ msgstr ""
-
-#~ msgid "success-paragraph-verified-email"
+#~ msgid "intent-form-v2-note"
 #~ msgstr ""
 
